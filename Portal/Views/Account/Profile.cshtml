@@ -1,0 +1,13 @@
+@model Core.Domain.Entities.Person
+
+@{
+    ViewData["Title"] = "User Profile";
+    Layout = "_Layout";
+}
+
+<div class="container">
+    <h1>User Profile</h1>
+    <p><strong>Name:</strong> @Model.Name</p>
+    <p><strong>Email:</strong> @Model.Email</p>
+    <!-- Add more user profile information as needed -->
+</div>

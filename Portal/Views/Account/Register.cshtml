@@ -1,0 +1,67 @@
+@model Portal.Models.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = "_Layout";
+}
+
+<div class="container">
+    <h1>Registreren</h1>
+    <form asp-action="Register" method="post">
+
+        <!-- Name -->
+        <div class="form-group">
+            <label asp-for="Name">Naam</label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+            <label asp-for="Email">E-mailadres</label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <!-- Display custom email duplication error message -->
+        <div class="text-danger" id="email-error-message"></div>
+
+
+        <!-- Gender -->
+        <div class="form-group">
+            <label asp-for="Gender">Geslacht</label>
+            <input asp-for="Gender" class="form-control" />
+            <span asp-validation-for="Gender" class="text-danger"></span>
+        </div>
+
+        <!-- Address -->
+        <div class="form-group">
+            <label asp-for="Address">Adres</label>
+            <input asp-for="Address" class="form-control" />
+            <span asp-validation-for="Address" class="text-danger"></span>
+        </div>
+
+        <!-- Birth Date -->
+        <div class="form-group">
+            <label asp-for="BirthDate">Geboortedatum</label>
+            <input asp-for="BirthDate" class="form-control" />
+            <span asp-validation-for="BirthDate" class="text-danger"></span>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+            <label asp-for="Password">Wachtwoord</label>
+            <input type="password" asp-for="Password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="form-group">
+            <label asp-for="ConfirmPassword">Bevestig wachtwoord</label>
+            <input type="password" asp-for="ConfirmPassword" class="form-control" />
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Registreren</button>
+    </form>
+</div>
