@@ -6,6 +6,8 @@ using Core.DomainServices.Services.Interfaces;
 using Infrastructure;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using dotenv.net;
+using DotNetEnv;
 
 namespace Portal
 {
@@ -20,7 +22,11 @@ namespace Portal
 
         public void ConfigureServices(IServiceCollection services)
         {
-            var password = Environment.GetEnvironmentVariable("DB_PASSWORD");
+            // Load environment variables
+            DotEnv.Load();
+
+            // Get the password from the environment variables
+            var password = Env.GetString("DB_PASSWORD");
 
             var connectionString = Configuration.GetConnectionString("ApplicationDbContext")!
                 .Replace("{password}", password);
@@ -46,7 +52,6 @@ namespace Portal
             services.AddScoped<IBoardGameNightRepository, BoardGameNightRepository>();
             services.AddScoped<IBoardGameService, BoardGameService>();
             services.AddScoped<IBoardGameRepository, BoardGameRepository>();
-
 
             // Add logging
             services.AddLogging(logging =>
@@ -99,7 +104,6 @@ namespace Portal
                     pattern: "BoardGame/{action}/{id?}",
                     defaults: new { controller = "BoardGame" });
 
-                // Add a similar route for the BoardGameNightController if needed
                 endpoints.MapControllerRoute(
                     name: "boardgamenight",
                     pattern: "BoardGameNight/{action}/{id?}",

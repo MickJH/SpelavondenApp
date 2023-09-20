@@ -16,7 +16,6 @@ namespace Core.Domain.Entities
         public ICollection<BoardGame>? Games { get; set; }
         public FoodAndDrinkOption? FoodAndDrinkOptions { get; set; }
         public int SelectedBoardGameId { get; set; }
-        public List<BoardGame>? AvailableBoardGames { get; set; }
     }
 }
 

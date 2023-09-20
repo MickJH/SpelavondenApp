@@ -188,3 +188,6 @@ E:\School (OneDrive)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\
 E:\School (OneDrive)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Portal\obj\Debug\net6.0\Portal.pdb
 E:\School (OneDrive)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Portal\obj\Debug\net6.0\Portal.genruntimeconfig.cache
 E:\School (OneDrive)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Portal\obj\Debug\net6.0\ref\Portal.dll
+E:\School (OneDrive)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Portal\bin\Debug\net6.0\dotenv.net.dll
+E:\School (OneDrive)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Portal\bin\Debug\net6.0\DotNetEnv.dll
+E:\School (OneDrive)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Portal\bin\Debug\net6.0\Sprache.dll

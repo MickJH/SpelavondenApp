@@ -1,3 +1,6 @@
+using dotenv.net;
+using DotNetEnv;
+
 namespace Portal
 {
     public class Program
