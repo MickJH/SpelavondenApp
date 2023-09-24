@@ -46,14 +46,20 @@ namespace Portal.Controllers
         [Authorize]
         public IActionResult Create()
         {
-            return View();
+            var model = new BoardGameNight
+            {
+                Games = new List<BoardGame>()
+            };
+
+            return View(model);
         }
+
 
         // POST: BoardGameNight/Create
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(BoardGameNight boardGameNight)
+        public async Task<IActionResult> Create(BoardGameNight boardGameNight, int selectedBoardGameId)
         {
             //Get the current user
             var user = await _userManager.GetUserAsync(User);
@@ -65,6 +71,19 @@ namespace Portal.Controllers
                 boardGameNight.OrganizerId = user.Id;
             }
 
+            if (selectedBoardGameId != 0)
+            {
+                // Board game was selected from the dropdown
+                boardGameNight.SelectedBoardGameId = selectedBoardGameId;
+            }
+            else
+            {
+                var newBoardGame = new BoardGame();
+
+                boardGameNight.Games ??= new List<BoardGame>();
+                boardGameNight.Games.Add(newBoardGame);
+            }
+
             var boardGames = await _boardGameService.GetAllBoardGamesAsync();
 
             if (boardGames != null)
@@ -73,7 +92,6 @@ namespace Portal.Controllers
             }
             else
             {
-                // Handle the case where boardGames is null, e.g., assign an empty list
                 boardGameNight.Games = new List<BoardGame>();
             }
 
@@ -86,11 +104,21 @@ namespace Portal.Controllers
         }
 
 
+
+
         // GET: BoardGameNight/Edit/5
         [Authorize]
         public async Task<IActionResult> Edit(int id)
         {
             var boardGameNight = await _boardGameNightService.GetBoardGameNightByIdAsync(id);
+
+            // Check if the current user is the organizer of this BoardGameNight
+            var user = await _userManager.GetUserAsync(User);
+            if (boardGameNight != null && boardGameNight.OrganizerId != user.Id)
+            {
+                // User is not the organizer, return an error or redirect
+                return Forbid(); // You can customize this behavior as needed
+            }
 
             if (boardGameNight == null)
             {
@@ -99,6 +127,7 @@ namespace Portal.Controllers
 
             return View(boardGameNight);
         }
+
 
         // POST: BoardGameNight/Edit/5
         [Authorize]

@@ -7475,11 +7475,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\School (OneDrive)\\OneDrive - Avans Hogeschool\\Desktop\\Avans\\Jaar2_Herkansing\\Periode1\\ServerSide-WebFrameworksIndividueel\\Portal\\Portal.csproj",
+      "projectUniqueName": "C:\\OneDrive (School)\\OneDrive - Avans Hogeschool\\Desktop\\Avans\\Jaar2_Herkansing\\Periode1\\ServerSide-WebFrameworksIndividueel\\Portal\\Portal.csproj",
       "projectName": "Portal",
-      "projectPath": "E:\\School (OneDrive)\\OneDrive - Avans Hogeschool\\Desktop\\Avans\\Jaar2_Herkansing\\Periode1\\ServerSide-WebFrameworksIndividueel\\Portal\\Portal.csproj",
+      "projectPath": "C:\\OneDrive (School)\\OneDrive - Avans Hogeschool\\Desktop\\Avans\\Jaar2_Herkansing\\Periode1\\ServerSide-WebFrameworksIndividueel\\Portal\\Portal.csproj",
       "packagesPath": "C:\\Users\\mickj\\.nuget\\packages\\",
-      "outputPath": "E:\\School (OneDrive)\\OneDrive - Avans Hogeschool\\Desktop\\Avans\\Jaar2_Herkansing\\Periode1\\ServerSide-WebFrameworksIndividueel\\Portal\\obj\\",
+      "outputPath": "C:\\OneDrive (School)\\OneDrive - Avans Hogeschool\\Desktop\\Avans\\Jaar2_Herkansing\\Periode1\\ServerSide-WebFrameworksIndividueel\\Portal\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -7495,21 +7495,21 @@
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
-        "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "E:\\School (OneDrive)\\OneDrive - Avans Hogeschool\\Desktop\\Avans\\Jaar2_Herkansing\\Periode1\\ServerSide-WebFrameworksIndividueel\\Core.DomainServices\\Core.DomainServices.csproj": {
-              "projectPath": "E:\\School (OneDrive)\\OneDrive - Avans Hogeschool\\Desktop\\Avans\\Jaar2_Herkansing\\Periode1\\ServerSide-WebFrameworksIndividueel\\Core.DomainServices\\Core.DomainServices.csproj"
+            "C:\\OneDrive (School)\\OneDrive - Avans Hogeschool\\Desktop\\Avans\\Jaar2_Herkansing\\Periode1\\ServerSide-WebFrameworksIndividueel\\Core.DomainServices\\Core.DomainServices.csproj": {
+              "projectPath": "C:\\OneDrive (School)\\OneDrive - Avans Hogeschool\\Desktop\\Avans\\Jaar2_Herkansing\\Periode1\\ServerSide-WebFrameworksIndividueel\\Core.DomainServices\\Core.DomainServices.csproj"
             },
-            "E:\\School (OneDrive)\\OneDrive - Avans Hogeschool\\Desktop\\Avans\\Jaar2_Herkansing\\Periode1\\ServerSide-WebFrameworksIndividueel\\Core.Domain\\Core.Domain.csproj": {
-              "projectPath": "E:\\School (OneDrive)\\OneDrive - Avans Hogeschool\\Desktop\\Avans\\Jaar2_Herkansing\\Periode1\\ServerSide-WebFrameworksIndividueel\\Core.Domain\\Core.Domain.csproj"
+            "C:\\OneDrive (School)\\OneDrive - Avans Hogeschool\\Desktop\\Avans\\Jaar2_Herkansing\\Periode1\\ServerSide-WebFrameworksIndividueel\\Core.Domain\\Core.Domain.csproj": {
+              "projectPath": "C:\\OneDrive (School)\\OneDrive - Avans Hogeschool\\Desktop\\Avans\\Jaar2_Herkansing\\Periode1\\ServerSide-WebFrameworksIndividueel\\Core.Domain\\Core.Domain.csproj"
             },
-            "E:\\School (OneDrive)\\OneDrive - Avans Hogeschool\\Desktop\\Avans\\Jaar2_Herkansing\\Periode1\\ServerSide-WebFrameworksIndividueel\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "E:\\School (OneDrive)\\OneDrive - Avans Hogeschool\\Desktop\\Avans\\Jaar2_Herkansing\\Periode1\\ServerSide-WebFrameworksIndividueel\\Infrastructure\\Infrastructure.csproj"
+            "C:\\OneDrive (School)\\OneDrive - Avans Hogeschool\\Desktop\\Avans\\Jaar2_Herkansing\\Periode1\\ServerSide-WebFrameworksIndividueel\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "C:\\OneDrive (School)\\OneDrive - Avans Hogeschool\\Desktop\\Avans\\Jaar2_Herkansing\\Periode1\\ServerSide-WebFrameworksIndividueel\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }
@@ -7570,7 +7570,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

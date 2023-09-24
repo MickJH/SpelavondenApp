@@ -1,5 +1,10 @@
 @model Core.Domain.Entities.BoardGameNight
 
+@{
+    ViewData["Title"] = "Bewerken";
+    Layout = "_Layout";
+}
+
 <h2>Edit Board Game Night</h2>
 
 <form asp-action="Edit" asp-route-id="@Model.Id" method="post" class="needs-validation" novalidate>

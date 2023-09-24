@@ -91,11 +91,7 @@ C:\OneDrive (School)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\
 C:\OneDrive (School)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Portal\obj\Debug\net6.0\staticwebassets.pack.json
 C:\OneDrive (School)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Portal\obj\Debug\net6.0\staticwebassets.build.json
 C:\OneDrive (School)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Portal\obj\Debug\net6.0\staticwebassets.development.json
-C:\OneDrive (School)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Portal\obj\Debug\net6.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
-C:\OneDrive (School)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Portal\obj\Debug\net6.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
-C:\OneDrive (School)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Portal\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\OneDrive (School)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Portal\obj\Debug\net6.0\scopedcss\bundle\Portal.styles.css
-C:\OneDrive (School)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Portal\obj\Debug\net6.0\scopedcss\projectbundle\Portal.bundle.scp.css
 C:\OneDrive (School)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Portal\obj\Debug\net6.0\Portal.csproj.CopyComplete
 C:\OneDrive (School)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Portal\obj\Debug\net6.0\Portal.dll
 C:\OneDrive (School)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Portal\obj\Debug\net6.0\refint\Portal.dll
@@ -191,3 +187,6 @@ E:\School (OneDrive)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\
 E:\School (OneDrive)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Portal\bin\Debug\net6.0\dotenv.net.dll
 E:\School (OneDrive)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Portal\bin\Debug\net6.0\DotNetEnv.dll
 E:\School (OneDrive)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Portal\bin\Debug\net6.0\Sprache.dll
+C:\OneDrive (School)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Portal\bin\Debug\net6.0\dotenv.net.dll
+C:\OneDrive (School)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Portal\bin\Debug\net6.0\DotNetEnv.dll
+C:\OneDrive (School)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Portal\bin\Debug\net6.0\Sprache.dll

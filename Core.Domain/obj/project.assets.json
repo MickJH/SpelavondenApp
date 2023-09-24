@@ -3072,11 +3072,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\School (OneDrive)\\OneDrive - Avans Hogeschool\\Desktop\\Avans\\Jaar2_Herkansing\\Periode1\\ServerSide-WebFrameworksIndividueel\\Core.Domain\\Core.Domain.csproj",
+      "projectUniqueName": "C:\\OneDrive (School)\\OneDrive - Avans Hogeschool\\Desktop\\Avans\\Jaar2_Herkansing\\Periode1\\ServerSide-WebFrameworksIndividueel\\Core.Domain\\Core.Domain.csproj",
       "projectName": "Core.Domain",
-      "projectPath": "E:\\School (OneDrive)\\OneDrive - Avans Hogeschool\\Desktop\\Avans\\Jaar2_Herkansing\\Periode1\\ServerSide-WebFrameworksIndividueel\\Core.Domain\\Core.Domain.csproj",
+      "projectPath": "C:\\OneDrive (School)\\OneDrive - Avans Hogeschool\\Desktop\\Avans\\Jaar2_Herkansing\\Periode1\\ServerSide-WebFrameworksIndividueel\\Core.Domain\\Core.Domain.csproj",
       "packagesPath": "C:\\Users\\mickj\\.nuget\\packages\\",
-      "outputPath": "E:\\School (OneDrive)\\OneDrive - Avans Hogeschool\\Desktop\\Avans\\Jaar2_Herkansing\\Periode1\\ServerSide-WebFrameworksIndividueel\\Core.Domain\\obj\\",
+      "outputPath": "C:\\OneDrive (School)\\OneDrive - Avans Hogeschool\\Desktop\\Avans\\Jaar2_Herkansing\\Periode1\\ServerSide-WebFrameworksIndividueel\\Core.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3145,7 +3145,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+using Core.Domain.Entities.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace Core.Domain.Entities
@@ -5,23 +7,31 @@ namespace Core.Domain.Entities
     public class BoardGame
     {
         public int Id { get; set; }
+
+        [Required(ErrorMessage = "Naam is verplicht.")]
         public string? Name { get; set; }
+
+        [Required(ErrorMessage = "Beschrijving is verplicht.")]
         public string? Description { get; set; }
-        public GenreType? Genre { get; set; } // Enum representing genres.
+
+        [Required(ErrorMessage = "Genre is verplicht.")]
+        public GenreType? Genre { get; set; } = new GenreType();
+
+        [Display(Name = "Is 18+")]
         public bool Is18Plus { get; set; }
+
+        [Display(Name = "Foto URL")]
         public string? PhotoUrl { get; set; }
-        public GameType? GameType { get; set; } // Enum representing game types (e.g., CardGame)
+
+        [Display(Name = "Speltype")]
+        public GameType? GameType { get; set; } = new GameType();
     }
 
     [Owned]
     public class GameType
     {
-        public string? Type { get; set; } // Define properties for your GameType enum, e.g., Type
+        [Required(ErrorMessage = "Speltype is verplicht.")]
+        public string? Type { get; set; }
     }
 
-    [Owned]
-    public class GenreType
-    {
-        public string? Genre { get; set; } // Define properties for your GenreType enum, e.g., Genre
-    }
 }

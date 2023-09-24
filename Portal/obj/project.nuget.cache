@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "H2APtacZW6pjg7hBeil765v6LAy8EYzBfR0YeqlXmzyhdse0r4+tMsnuCcZPmiSPMUtEla9icwctc8pRgwzZmA==",
+  "dgSpecHash": "m6bAA2fBG4WoAeHyTXRFu6P3J8mHFGy/WsT7iw0TKktw6xrOjtsNv4IjEbqDHCWB/K+MjhJ/dEnWLvvu0ZXWkQ==",
   "success": true,
-  "projectFilePath": "E:\\School (OneDrive)\\OneDrive - Avans Hogeschool\\Desktop\\Avans\\Jaar2_Herkansing\\Periode1\\ServerSide-WebFrameworksIndividueel\\Portal\\Portal.csproj",
+  "projectFilePath": "C:\\OneDrive (School)\\OneDrive - Avans Hogeschool\\Desktop\\Avans\\Jaar2_Herkansing\\Periode1\\ServerSide-WebFrameworksIndividueel\\Portal\\Portal.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mickj\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\mickj\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

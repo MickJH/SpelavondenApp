@@ -1,6 +1,6 @@
 @model IEnumerable<Core.Domain.Entities.BoardGame>
 
-<h2>Board Games</h2>
+<h2>Spellen</h2>
 
 <div class="row">
     <div class="col-md-12">
@@ -8,31 +8,37 @@
     </div>
 </div>
 
-<div class="table-responsive">
-    <table class="table table-striped table-bordered">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Genre</th>
-                <th>Is 18+</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>@item.Name</td>
-                    <td>@item.Description</td>
-                    <td>@item.Genre.Genre</td>
-                    <td>@(item.Is18Plus ? "Yes" : "No")</td>
-                    <td>
-                        <a class="btn btn-primary btn-sm" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
-                        <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-3 mb-3">
+            <div class="card">
+                @if (!string.IsNullOrEmpty(item.PhotoUrl))
+                {
+                    <img src="@item.PhotoUrl" class="card-img-top" alt="Board Game Image">
+                }
+                <div class="card-body">
+                    <h5 class="card-title">@item.Name</h5>
+                    <p class="card-text">@TruncateDescription(item.Description)</p>
+                    <p class="card-text"><strong>Genre: </strong>@item.Genre</p>
+                    <p class="card-text"><strong>Speltype: </strong>@item.GameType.Type</p>
+                    <p class="card-text"><strong>Is 18+: </strong>@(item.Is18Plus ? "Ja" : "Nee")</p>
+                    <div class="text-center">
+                        <a href="@Url.Action("Details", "BoardGame", new { id = item.Id })"
+                            class="btn btn-primary btn-sm">Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
 </div>
+
+@functions {
+    string TruncateDescription(string description, int maxChars = 100)
+    {
+        if (description.Length <= maxChars)
+            return description;
+
+        return description.Substring(0, maxChars) + "...";
+    }
+}

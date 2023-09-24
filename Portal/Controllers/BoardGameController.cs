@@ -87,5 +87,21 @@ namespace Portal.Controllers
             await _boardGameService.DeleteBoardGameAsync(id);
             return RedirectToAction(nameof(Index));
         }
+
+        // GET: BoardGame/Details/5
+        public async Task<IActionResult> Details(int id)
+        {
+            // Fetch the BoardGame by id
+            var boardGame = await _boardGameService.GetBoardGameByIdAsync(id);
+
+            if (boardGame == null)
+            {
+                return NotFound();
+            }
+
+            return View(boardGame);
+        }
+
+
     }
 }

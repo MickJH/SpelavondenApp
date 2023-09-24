@@ -4,15 +4,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>@ViewData["Title"] - SpelavondenApp</title>
+  <title>@ViewData["Title"]</title>
   <link rel="stylesheet" href="~/css/bootstrap/bootstrap.min.css" />
   <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Spelavonden</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+    <a class="navbar-brand" style="margin-left: 10px" href="/">Logo</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -22,7 +23,10 @@
           <a class="nav-link" href="/">Thuis</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/BoardGameNight/Index">Jouw spelavonden</a>
+          <a class="nav-link" href="/BoardGameNight/Index">Spelavonden</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/BoardGame">Spellen</a>
         </li>
       </ul>
     </div>
@@ -35,7 +39,7 @@
       {
         <li class="nav-item">
           <form asp-controller="Account" asp-action="Logout" method="post" id="logoutForm">
-            <button type="submit" class="nav-link btn btn-link">Logout</button>
+            <button type="submit" class="nav-link btn btn-link">Uitloggen</button>
             @Html.AntiForgeryToken()
           </form>
         </li>
@@ -43,7 +47,7 @@
       else
       {
         <li class="nav-item">
-          <a class="nav-link" href="/Account/Login">Login</a>
+          <a class="nav-link" href="/Account/Login">Inloggen</a>
         </li>
       }
     </ul>
@@ -52,12 +56,18 @@
   <div class="container">@RenderBody()</div>
 
   <footer class="fixed-bottom bg-dark text-light text-center py-3">
-    &copy; @DateTime.Now.Year Gemaakt door Mick Holster, student Avans
-    Hogeschool.
+    &copy; @DateTime.Now.Year Gemaakt door Mick Holster, student Avans Hogeschool.
   </footer>
+
   <script src="~/lib/jquery/dist/jquery.min.js"></script>
   <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="~/js/site.js" asp-append-version="true"></script>
+  <script>
+    $(document).ready(function () {
+      // Initialize Bootstrap components
+      $('[data-toggle="collapse"]').collapse();
+    });
+  </script>
+
   @await RenderSectionAsync("Scripts", required: false)
 </body>
 
