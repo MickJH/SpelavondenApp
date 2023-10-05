@@ -11,6 +11,7 @@
             <h2 class="text-center">Maak een spelavond aan:</h2>
 
             <form asp-action="Create" method="post" class="needs-validation" novalidate>
+
                 <div class="form-group">
                     <label asp-for="DateAndTime">Datum & Tijd</label>
                     <input asp-for="DateAndTime" class="form-control" required />
@@ -29,29 +30,42 @@
                     <span asp-validation-for="MaxPlayers" class="text-danger"></span>
                 </div>
 
-                <div class="form-group">
-                    <label asp-for="SelectedBoardGameId">Selecteer een bordspel</label>
-                    <select asp-for="SelectedBoardGameId" class="form-control" required>
-                        <option value="">-- Selecteer een bordspel --</option>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" asp-for="FoodAndDrinkOptions.LactoseFree">
+                    <label class="form-check-label">Lactosevrij</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" asp-for="FoodAndDrinkOptions.NutFree">
+                    <label class="form-check-label">Notenvrij</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" asp-for="FoodAndDrinkOptions.Vegetarian">
+                    <label class="form-check-label">Vegetarisch</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" asp-for="FoodAndDrinkOptions.NonAlcoholic">
+                    <label class="form-check-label">Alcoholvrij</label>
+                </div>
 
-                        @if (Model.Games != null && Model.Games.Any())
+
+                <div class="form-group">
+                    <label asp-for="Games">Select Board Games</label>
+                    <select asp-for="SelectedBoardGameId" class="form-control">
+                        <option value="">-- Select a board game --</option>
+                        @if (Model.Games != null)
                         {
-                            foreach (var boardGame in Model.Games)
+                            @foreach (var game in Model.Games)
                             {
-                                <option value="@boardGame?.Id">@boardGame?.Name</option>
+                                <option value="@game.Id">@game.Name</option>
                             }
                         }
-                        else
-                        {
-                            <option value="" disabled>Geen bordspellen beschikbaar, maak er een aan.</option>
-                        }
                     </select>
-                    <span asp-validation-for="SelectedBoardGameId" class="text-danger"></span>
                 </div>
 
                 <div class="text-center">
                     <button type="submit" class="btn btn-primary">Aanmaken</button>
                 </div>
+
             </form>
         </div>
     </div>

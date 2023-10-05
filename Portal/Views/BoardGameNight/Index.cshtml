@@ -13,32 +13,39 @@
     </div>
 </div>
 
-<div class="table-responsive">
-    <table class="table table-striped table-bordered">
-        <thead>
-            <tr>
-                <th>Date and Time</th>
-                <th>Organizer</th>
-                <th>Address</th>
-                <th>Max Players</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>@item.DateAndTime.ToString("yyyy-MM-dd HH:mm")</td>
-                    <td>@(item.OrganizerName)</td>
-                    <td>@item.Address</td>
-                    <td>@item.MaxPlayers</td>
-                    <td>
-                        <a class="btn btn-primary btn-sm" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
-                        <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                    </td>
-                </tr>
-            }
-
-        </tbody>
-    </table>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Spelavond</h5>
+                    <p class="card-text"><strong>Datum en tijd: </strong>@item.DateAndTime.ToString("yyyy-MM-dd HH:mm")</p>
+                    <p class="card-text"><strong>Organizer: </strong>@(item.OrganizerName)</p>
+                    <p class="card-text"><strong>Adres: </strong>@item.Address</p>
+                    <p class="card-text"><strong>Max aantal spelers: </strong>@item.MaxPlayers</p>
+                    <div class="text-center">
+                        @if (ViewBag.SelectedGames != null)
+                        {
+                            <h5>Geselecteerd spel:</h5>
+                            foreach (var selectedGame in ViewBag.SelectedGames)
+                            {
+                                <p class="card-title">@selectedGame.Name</p>
+                            }
+                        }
+                        else
+                        {
+                            <p>No game selected.</p>
+                        }
+                    </div>
+                    <a href="@Url.Action("Details", "BoardGameNight", new { id = item.Id })"
+                        class="btn btn-primary btn-sm">Details</a>
+                    <a href="@Url.Action("Edit", "BoardGameNight", new { id = item.Id })"
+                        class="btn btn-secondary btn-sm">Edit</a>
+                    <a href="@Url.Action("Delete", "BoardGameNight", new { id = item.Id })"
+                        class="btn btn-danger btn-sm">Delete</a>
+                </div>
+            </div>
+        </div>
+    }
 </div>

@@ -1,20 +1,18 @@
-using System.ComponentModel.DataAnnotations;
+using HotChocolate.Types;
 
 namespace Core.Domain.Entities.Enums
 {
     public enum GenreType
     {
-        Familie,
-        Strategie,
-        Fantasy,
-        ScienceFiction,
-        Oorlog,
-        Educatief,
-        Coöperatief,
-        Abstract,
-        Avontuur,
-        Humor
+        FAMILIE,
+        STRATEGIE,
+        FANTASIE,
+        SCIENCEFICTION,
+        OORLOG,
+        EDUCATIEF,
+        COOPERATIEF,
+        ABSTRACT,
+        AVONTUUR,
+        HUMOR
     }
 }
-
-

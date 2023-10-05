@@ -1,0 +1,64 @@
+@model Core.Domain.Entities.BoardGameNight
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>@Model.DateAndTime.ToString("yyyy-MM-dd HH:mm")</h2>
+
+<div class="card">
+    <div class="row no-gutters">
+        <div class="col-md-12">
+            <div class="card-body">
+                <p class="card-text"><strong>Organisator: </strong>@Model.OrganizerName</p>
+                <p class="card-text"><strong>Adres: </strong>@Model.Address</p>
+                <p class="card-text"><strong>Max spelers: </strong>@Model.MaxPlayers</p>
+
+                @if (ViewBag.SelectedGame != null)
+                {
+                    <h3>Geselecteerd spel:</h3>
+                    <div class="card mb-3">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                @if (!string.IsNullOrEmpty(ViewBag.SelectedGame.PhotoUrl))
+                                {
+                                    <img src="@ViewBag.SelectedGame.PhotoUrl" class="card-img" alt="@ViewBag.SelectedGame.Name">
+                                }
+                                else
+                                {
+                                    <img src="~/images/GamesHomePagePhoto.jpg" class="card-img" alt="Placeholder Image">
+                                }
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">@ViewBag.SelectedGame.Name</h5>
+                                    <p class="card-text"><strong>Beschrijving: </strong>@ViewBag.SelectedGame.Description
+                                    </p>
+                                    <p class="card-text"><strong>Genre: </strong>@ViewBag.SelectedGame.Genre</p>
+                                    <p class="card-text"><strong>Speltype: </strong>@ViewBag.SelectedGame.GameType.Type</p>
+                                    <p class="card-text"><strong>18+: </strong>@(ViewBag.SelectedGame.Is18Plus ? "Ja" :
+                                    "Nee")</p>
+                                    <a href="@Url.Action("Details", "BoardGame", new { id = ViewBag.SelectedGame.Id })"
+                                        class="btn btn-primary">Bekijk spel</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <p>No game selected.</p>
+                }
+
+
+                <div class="text-right mt-2">
+                    <a href="@Url.Action("Index", "BoardGameNight")" class="btn btn-primary">Back to List</a>
+                    <a href="@Url.Action("Edit", "BoardGameNight", new { id = Model.Id })"
+                        class="btn btn-warning">Edit</a>
+                    <a href="@Url.Action("Delete", "BoardGameNight", new { id = Model.Id })"
+                        class="btn btn-danger">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -33,16 +33,21 @@ namespace Infrastructure.Migrations
                     b.Property<int?>("BoardGameNightId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("BoardGameNightId1")
+                        .HasColumnType("int");
+
                     b.Property<string>("Description")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("Genre")
+                    b.Property<int>("Genre")
                         .HasColumnType("int");
 
                     b.Property<bool>("Is18Plus")
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhotoUrl")
@@ -51,6 +56,8 @@ namespace Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("BoardGameNightId");
+
+                    b.HasIndex("BoardGameNightId1");
 
                     b.ToTable("BoardGames");
                 });
@@ -64,10 +71,11 @@ namespace Infrastructure.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Address")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("DateAndTime")
-                        .HasColumnType("datetime2");
+                    b.Property<DateTimeOffset>("DateAndTime")
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<int?>("FoodAndDrinkOptionsId")
                         .HasColumnType("int");
@@ -82,6 +90,7 @@ namespace Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("SelectedBoardGameId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -192,8 +201,12 @@ namespace Infrastructure.Migrations
             modelBuilder.Entity("Core.Domain.Entities.BoardGame", b =>
                 {
                     b.HasOne("Core.Domain.Entities.BoardGameNight", null)
-                        .WithMany("Games")
+                        .WithMany("AvailableBoardGames")
                         .HasForeignKey("BoardGameNightId");
+
+                    b.HasOne("Core.Domain.Entities.BoardGameNight", null)
+                        .WithMany("Games")
+                        .HasForeignKey("BoardGameNightId1");
 
                     b.OwnsOne("Core.Domain.Entities.GameType", "GameType", b1 =>
                         {
@@ -201,6 +214,7 @@ namespace Infrastructure.Migrations
                                 .HasColumnType("int");
 
                             b1.Property<string>("Type")
+                                .IsRequired()
                                 .HasColumnType("nvarchar(max)");
 
                             b1.HasKey("BoardGameId");
@@ -232,6 +246,8 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("Core.Domain.Entities.BoardGameNight", b =>
                 {
+                    b.Navigation("AvailableBoardGames");
+
                     b.Navigation("Games");
 
                     b.Navigation("Players");

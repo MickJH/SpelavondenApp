@@ -18,8 +18,8 @@ namespace Infrastructure
         {
             modelBuilder.Entity<BoardGame>()
                 .OwnsOne(b => b.GameType);
+
             base.OnModelCreating(modelBuilder);
         }
     }
-
 }

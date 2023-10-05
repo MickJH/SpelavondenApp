@@ -45,12 +45,14 @@ namespace Core.DomainServices.Repositories
 
         public async Task DeleteBoardGameNightAsync(int id)
         {
-            var boardGameNight = await _context.BoardGameNights.FindAsync(id);
-            if (boardGameNight != null)
-            {
-                _context.BoardGameNights.Remove(boardGameNight);
-                await _context.SaveChangesAsync();
-            }
+            var boardGameNight = await _context.BoardGameNights
+                .FirstOrDefaultAsync(bgn => bgn.Id == id);
+
+            _context.BoardGameNights.Remove(boardGameNight);
+            await _context.SaveChangesAsync();
         }
+
+
+
     }
 }
