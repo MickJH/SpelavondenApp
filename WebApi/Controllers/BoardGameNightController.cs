@@ -4,8 +4,9 @@ using Core.DomainServices.Services.Interfaces;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
-[Route("api/[controller]")]
+[Route("api/boardgamenight")]
 [ApiController]
 public class BoardGameNightController : ControllerBase
 {
@@ -18,8 +19,7 @@ public class BoardGameNightController : ControllerBase
         _userManager = userManager;
     }
 
-
-    [Authorize]  // Require authentication to access this endpoint
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [HttpPost("join/{id}")]
     public async Task<IActionResult> JoinBoardGameNight(int id)
     {
@@ -28,21 +28,33 @@ public class BoardGameNightController : ControllerBase
         if (boardGameNight == null)
             return NotFound();
 
-        // Get the current user
         var currentUser = await _userManager.GetUserAsync(User);
 
         if (currentUser != null)
         {
-            // Add the current user to the Players collection
-            if (boardGameNight.Players == null)
-                boardGameNight.Players = new List<Person>();
+            boardGameNight.Players ??= new List<Player>();
 
-            boardGameNight.Players.Add(currentUser);
+            var userName = currentUser.UserName;
+
+            if (boardGameNight.Players.Any(player => player.Name == userName))
+            {
+                return BadRequest("Unable to join: " + userName + " is already joined.");
+            }
+
+            if (boardGameNight.Players.Count >= boardGameNight.MaxPlayers)
+            {
+                return BadRequest("Unable to join: Maximum number of players has been reached.");
+            }
+
+            var player = new Player { Name = userName };
+            boardGameNight.Players.Add(player);
+
             await _boardGameNightService.UpdateBoardGameNightAsync(id, boardGameNight);
-
-            return Ok();
+            return Ok(userName + " joined the board game night.");
         }
 
         return BadRequest("User not found.");
     }
+
+
 }

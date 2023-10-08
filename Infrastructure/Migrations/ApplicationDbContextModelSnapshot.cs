@@ -74,11 +74,14 @@ namespace Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTimeOffset>("DateAndTime")
-                        .HasColumnType("datetimeoffset");
+                    b.Property<DateTime>("DateAndTime")
+                        .HasColumnType("datetime2");
 
                     b.Property<int?>("FoodAndDrinkOptionsId")
                         .HasColumnType("int");
+
+                    b.Property<bool>("Is18Plus")
+                        .HasColumnType("bit");
 
                     b.Property<int>("MaxPlayers")
                         .HasColumnType("int");
@@ -125,77 +128,25 @@ namespace Infrastructure.Migrations
                     b.ToTable("FoodAndDrinkOption");
                 });
 
-            modelBuilder.Entity("Core.Domain.Entities.Person", b =>
+            modelBuilder.Entity("Core.Domain.Entities.Player", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("AccessFailedCount")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("Address")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("Birthdate")
-                        .HasColumnType("datetime2");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int?>("BoardGameNightId")
                         .HasColumnType("int");
 
-                    b.Property<string>("ConcurrencyStamp")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Gender")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("LockoutEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("datetimeoffset");
-
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NormalizedEmail")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NormalizedUserName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PasswordHash")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Role")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("SecurityStamp")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("TwoFactorEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("UserName")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("BoardGameNightId");
 
-                    b.ToTable("Person");
+                    b.ToTable("Player");
                 });
 
             modelBuilder.Entity("Core.Domain.Entities.BoardGame", b =>
@@ -237,7 +188,7 @@ namespace Infrastructure.Migrations
                     b.Navigation("FoodAndDrinkOptions");
                 });
 
-            modelBuilder.Entity("Core.Domain.Entities.Person", b =>
+            modelBuilder.Entity("Core.Domain.Entities.Player", b =>
                 {
                     b.HasOne("Core.Domain.Entities.BoardGameNight", null)
                         .WithMany("Players")

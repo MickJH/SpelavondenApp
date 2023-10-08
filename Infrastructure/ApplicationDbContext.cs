@@ -9,10 +9,13 @@ namespace Infrastructure
         {
             BoardGameNights = Set<BoardGameNight>();
             BoardGames = Set<BoardGame>();
+            Player = Set<Player>();
         }
 
         public DbSet<BoardGameNight> BoardGameNights { get; set; }
         public DbSet<BoardGame> BoardGames { get; set; }
+        public DbSet<Player> Player { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

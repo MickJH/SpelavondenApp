@@ -17,13 +17,14 @@ namespace Core.Domain.Entities
         [DataType(DataType.Date, ErrorMessage = "Ongeldige datum.")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [FutureDate(ErrorMessage = "Spelavond moet minimaal 24 uur van te voren worden aangemaakt.")]
-        public DateTimeOffset DateAndTime { get; set; } = DateTimeOffset.Now;
+        public DateTime DateAndTime { get; set; } = DateTime.Now;
 
         [Required(ErrorMessage = "Max aantal spelers is verplicht.")]
         public int MaxPlayers { get; set; }
 
-        public ICollection<Person>? Players { get; set; }
-
+        [Display(Name = "Is 18+")]
+        public bool Is18Plus { get; set; }
+        public List<Player> Players { get; set; } = new List<Player>();
         public ICollection<BoardGame>? Games { get; set; }
         public FoodAndDrinkOption? FoodAndDrinkOptions { get; set; }
 
@@ -44,5 +45,11 @@ namespace Core.Domain.Entities
             }
             return false;  // Invalid type
         }
+    }
+
+    public class Player
+    {
+        public int Id { get; set; }
+        public string? Name { get; set; }
     }
 }

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class IntialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -36,7 +36,7 @@ namespace Infrastructure.Migrations
                     OrganizerId = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     OrganizerName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DateAndTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DateAndTime = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
                     MaxPlayers = table.Column<int>(type: "int", nullable: false),
                     FoodAndDrinkOptionsId = table.Column<int>(type: "int", nullable: true),
                     SelectedBoardGameId = table.Column<int>(type: "int", nullable: false)
@@ -82,36 +82,19 @@ namespace Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Person",
+                name: "Player",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Gender = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Address = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Birthdate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Role = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    BoardGameNightId = table.Column<int>(type: "int", nullable: true),
-                    UserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    NormalizedUserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    NormalizedEmail = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    EmailConfirmed = table.Column<bool>(type: "bit", nullable: false),
-                    PasswordHash = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SecurityStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ConcurrencyStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PhoneNumberConfirmed = table.Column<bool>(type: "bit", nullable: false),
-                    TwoFactorEnabled = table.Column<bool>(type: "bit", nullable: false),
-                    LockoutEnd = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
-                    LockoutEnabled = table.Column<bool>(type: "bit", nullable: false),
-                    AccessFailedCount = table.Column<int>(type: "int", nullable: false)
+                    BoardGameNightId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Person", x => x.Id);
+                    table.PrimaryKey("PK_Player", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Person_BoardGameNights_BoardGameNightId",
+                        name: "FK_Player_BoardGameNights_BoardGameNightId",
                         column: x => x.BoardGameNightId,
                         principalTable: "BoardGameNights",
                         principalColumn: "Id");
@@ -133,8 +116,8 @@ namespace Infrastructure.Migrations
                 column: "BoardGameNightId1");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Person_BoardGameNightId",
-                table: "Person",
+                name: "IX_Player_BoardGameNightId",
+                table: "Player",
                 column: "BoardGameNightId");
         }
 
@@ -145,7 +128,7 @@ namespace Infrastructure.Migrations
                 name: "BoardGames");
 
             migrationBuilder.DropTable(
-                name: "Person");
+                name: "Player");
 
             migrationBuilder.DropTable(
                 name: "BoardGameNights");

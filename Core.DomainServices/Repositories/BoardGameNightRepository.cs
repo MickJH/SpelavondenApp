@@ -21,13 +21,16 @@ namespace Core.DomainServices.Repositories
         public async Task<IEnumerable<BoardGameNight>> GetAllBoardGameNightsAsync()
         {
             return await _context.BoardGameNights
+            .Include(bgn => bgn.Players)
                 .ToListAsync();
         }
 
 
         public async Task<BoardGameNight> GetBoardGameNightByIdAsync(int id)
         {
-            return await _context.BoardGameNights.FindAsync(id);
+            return await _context.BoardGameNights
+                .Include(bgn => bgn.Players)
+                .FirstOrDefaultAsync(bgn => bgn.Id == id);
         }
 
         public async Task<BoardGameNight> CreateBoardGameNightAsync(BoardGameNight boardGameNight)
@@ -51,8 +54,5 @@ namespace Core.DomainServices.Repositories
             _context.BoardGameNights.Remove(boardGameNight);
             await _context.SaveChangesAsync();
         }
-
-
-
     }
 }
