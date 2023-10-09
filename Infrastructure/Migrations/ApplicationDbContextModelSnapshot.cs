@@ -83,6 +83,9 @@ namespace Infrastructure.Migrations
                     b.Property<bool>("Is18Plus")
                         .HasColumnType("bit");
 
+                    b.Property<bool>("IsOrganizerOverride18Plus")
+                        .HasColumnType("bit");
+
                     b.Property<int>("MaxPlayers")
                         .HasColumnType("int");
 

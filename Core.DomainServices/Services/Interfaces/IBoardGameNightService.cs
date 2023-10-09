@@ -13,5 +13,7 @@ namespace Core.DomainServices.Services.Interfaces
         Task<BoardGameNight> CreateBoardGameNightAsync(BoardGameNight boardGameNight);
         Task UpdateBoardGameNightAsync(int id, BoardGameNight boardGameNight);
         Task DeleteBoardGameNightAsync(int id);
+        Task<IEnumerable<BoardGameNight>> GetBoardGameNightsByOrganizerAsync(string organizerName);
+        Task<IEnumerable<BoardGameNight>> GetBoardGameNightsByParticipantAsync(string participantName);
     }
 }

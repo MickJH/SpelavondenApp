@@ -24,11 +24,15 @@ namespace Core.Domain.Entities
 
         [Display(Name = "Is 18+")]
         public bool Is18Plus { get; set; }
+
+        [Display(Name = "18+ (Override)")]
+
+        public bool IsOrganizerOverride18Plus { get; set; }
         public List<Player> Players { get; set; } = new List<Player>();
         public ICollection<BoardGame>? Games { get; set; }
         public FoodAndDrinkOption? FoodAndDrinkOptions { get; set; }
 
-        public IEnumerable<BoardGame>? AvailableBoardGames { get; set; }
+        public BoardGame? SelectedBoardGame { get; set; }
 
         [Required(ErrorMessage = "Spel is verplicht.")]
         public int? SelectedBoardGameId { get; set; }

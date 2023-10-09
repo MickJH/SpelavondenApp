@@ -20,18 +20,23 @@ namespace Core.DomainServices.Repositories
 
         public async Task<IEnumerable<BoardGameNight>> GetAllBoardGameNightsAsync()
         {
-            return await _context.BoardGameNights
-            .Include(bgn => bgn.Players)
+            var boardGameNights = await _context.BoardGameNights
+                .Include(bgn => bgn.Games)
+                .Include(bgn => bgn.Players)
+                .Include(bgn => bgn.SelectedBoardGame)
                 .ToListAsync();
-        }
 
+            return boardGameNights;
+        }
 
         public async Task<BoardGameNight> GetBoardGameNightByIdAsync(int id)
         {
             return await _context.BoardGameNights
+                .Include(bgn => bgn.Games)
                 .Include(bgn => bgn.Players)
                 .FirstOrDefaultAsync(bgn => bgn.Id == id);
         }
+
 
         public async Task<BoardGameNight> CreateBoardGameNightAsync(BoardGameNight boardGameNight)
         {
@@ -54,5 +59,20 @@ namespace Core.DomainServices.Repositories
             _context.BoardGameNights.Remove(boardGameNight);
             await _context.SaveChangesAsync();
         }
+
+        public async Task<IEnumerable<BoardGameNight>> GetBoardGameNightsByOrganizerAsync(string organizerName)
+        {
+            return await _context.BoardGameNights
+                .Where(bgn => bgn.OrganizerName == organizerName)
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<BoardGameNight>> GetBoardGameNightsByParticipantAsync(string participantName)
+        {
+            return await _context.BoardGameNights
+                .Where(bgn => bgn.Players.Any(player => player.Name == participantName))
+                .ToListAsync();
+        }
+
     }
 }

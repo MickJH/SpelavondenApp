@@ -1,0 +1,41 @@
+@model IEnumerable<Core.Domain.Entities.BoardGameNight>
+
+@{
+    ViewData["Title"] = "Jouw spelavonden";
+}
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Spelavond</h5>
+                    <p class="card-text"><strong>Datum en tijd: </strong>@item.DateAndTime.ToString("yyyy-MM-dd HH:mm")</p>
+                    <p class="card-text"><strong>Organizer: </strong>@(item.OrganizerName)</p>
+                    <p class="card-text"><strong>Adres: </strong>@item.Address</p>
+                    <p class="card-text"><strong>Max aantal spelers: </strong>@item.MaxPlayers</p>
+
+                    <div class="text-center">
+                        <h5>Geselecteerd spel:</h5>
+                        @if (item.SelectedBoardGame != null)
+                        {
+                            <p class="card-title">@item.SelectedBoardGame.Name</p>
+                        }
+                        else
+                        {
+                            <p>No game selected.</p>
+                        }
+                    </div>
+
+
+                    <a href="@Url.Action("Details", "BoardGameNight", new { id = item.Id })"
+                        class="btn btn-primary btn-sm">Details</a>
+                    <a href="@Url.Action("Edit", "BoardGameNight", new { id = item.Id })"
+                        class="btn btn-secondary btn-sm">Edit</a>
+                    <a href="@Url.Action("Delete", "BoardGameNight", new { id = item.Id })"
+                        class="btn btn-danger btn-sm">Delete</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

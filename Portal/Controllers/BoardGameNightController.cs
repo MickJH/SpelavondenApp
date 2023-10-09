@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Portal.Models;
 
 namespace Portal.Controllers
 {
@@ -21,29 +22,62 @@ namespace Portal.Controllers
             _boardGameService = boardGameService;
         }
 
-        // GET: BoardGameNight
         [Authorize]
-        public async Task<IActionResult> Index()
+        // GET: BoardGameNight
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+
+        [Authorize]
+        public async Task<IActionResult> AllBoardGameNights()
         {
             var boardGameNights = await _boardGameNightService.GetAllBoardGameNightsAsync();
 
-            // Populate the selected games for each board game night
-            var selectedGames = new List<BoardGame>();
-            foreach (var night in boardGameNights)
-            {
-                var selectedGame = await _boardGameService.GetBoardGameByIdAsync(night.SelectedBoardGameId ?? 0);
+            var selectedGameIds = boardGameNights.Select(night => night.SelectedBoardGameId).ToList();
 
-                // Ensure the selected game is unique
-                if (selectedGame != null && !selectedGames.Any(game => game.Id == selectedGame.Id))
-                {
-                    selectedGames.Add(selectedGame);
-                }
-            }
-
-            ViewBag.SelectedGames = selectedGames;
+            ViewBag.SelectedGameIds = selectedGameIds;
 
             return View(boardGameNights);
         }
+
+
+        [Authorize]
+        public async Task<IActionResult> OrganizedBoardGameNights()
+        {
+            var currentUser = await _userManager.GetUserAsync(User);
+
+            if (currentUser == null)
+            {
+                return RedirectToAction("Login", "Account"); // Redirect to login if the user is not authenticated
+            }
+
+            // Retrieve board game nights organized by the logged-in user
+            var organizedBoardGameNights = await _boardGameNightService.GetBoardGameNightsByOrganizerAsync(currentUser.Name!);
+
+            var boardGameNights = await _boardGameNightService.GetAllBoardGameNightsAsync();
+
+            var selectedGameIds = boardGameNights.Select(night => night.SelectedBoardGameId).ToList();
+
+            ViewBag.SelectedGameIds = selectedGameIds;
+
+            return View(organizedBoardGameNights);
+        }
+
+
+        [Authorize]
+        public async Task<IActionResult> JoinedBoardGameNights()
+        {
+            var currentUser = await _userManager.GetUserAsync(User);
+
+            // Retrieve board game nights where the logged-in user is a participant
+            var joinedBoardGameNights = await _boardGameNightService.GetBoardGameNightsByParticipantAsync(currentUser.UserName);
+
+            return View(joinedBoardGameNights);
+        }
+
+
 
         //Get: BoardGameNight/Create
         [Authorize]
@@ -68,6 +102,12 @@ namespace Portal.Controllers
             var user = await _userManager.GetUserAsync(User);
             SetOrganizerValues(boardGameNight, user);
             SetFoodAndDrinkOptions(boardGameNight);
+
+            // Get the selected board game
+            var selectedGame = await _boardGameService.GetBoardGameByIdAsync(selectedBoardGameId);
+
+            // Check if the selected board game is 18+ or if the organizer has overridden the 18+ status
+            boardGameNight.Is18Plus = selectedGame.Is18Plus || boardGameNight.IsOrganizerOverride18Plus;
 
             // Get the list of games again
             boardGameNight.Games = (ICollection<BoardGame>?)await _boardGameService.GetAllBoardGamesAsync();

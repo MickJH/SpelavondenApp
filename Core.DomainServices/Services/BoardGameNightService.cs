@@ -54,5 +54,15 @@ namespace Core.DomainServices.Services
         {
             await _boardGameNightRepository.DeleteBoardGameNightAsync(id);
         }
+
+        public async Task<IEnumerable<BoardGameNight>> GetBoardGameNightsByOrganizerAsync(string organizerName)
+        {
+            return await _boardGameNightRepository.GetBoardGameNightsByOrganizerAsync(organizerName);
+        }
+
+        public async Task<IEnumerable<BoardGameNight>> GetBoardGameNightsByParticipantAsync(string participantName)
+        {
+            return await _boardGameNightRepository.GetBoardGameNightsByParticipantAsync(participantName);
+        }
     }
 }

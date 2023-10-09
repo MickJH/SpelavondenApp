@@ -5,6 +5,9 @@
     Layout = "_Layout";
 }
 
+<script src="~/js/script.js"></script>
+
+
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-6 offset-md-3">
@@ -31,25 +34,27 @@
                     <span asp-validation-for="MaxPlayers" class="text-danger"></span>
                 </div>
 
-
                 <div class="form-group">
                     <label asp-for="Games">Select Board Games</label>
-                    <select asp-for="SelectedBoardGameId" class="form-control">
+                    <select asp-for="SelectedBoardGameId" class="form-control" id="SelectedBoardGameId">
                         <option value="">-- Select a board game --</option>
                         @if (Model.Games != null)
                         {
                             @foreach (var game in Model.Games)
                             {
-                                <option value="@game.Id">@game.Name</option>
+                                <option value="@game.Id" data-is18plus="@game.Is18Plus">@game.Name</option>
                             }
                         }
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="Is18Plus">18+</label>
-                    <input asp-for="Is18Plus" class="form-check-input" type="checkbox" />
+                    <label asp-for="Is18Plus" class="form-check-label">
+                        <input asp-for="Is18Plus" class="form-check-input" type="checkbox" id="Is18Plus" />
+                        18+
+                    </label>
                 </div>
+
 
                 <p>Zit jouw favoriete borspel er niet bij?</p>
                 <a href="/BoardGame/Create" class="btn btn-secondary">Maak bordspel aan</a>

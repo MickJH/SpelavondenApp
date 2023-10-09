@@ -1,51 +1,54 @@
-@model IEnumerable<Core.Domain.Entities.BoardGameNight>
-
 @{
     ViewData["Title"] = "Spelavonden";
     Layout = "_Layout";
 }
 
-<h2>Jouw spelavonden:</h2>
-
-<div class="row">
-    <div class="col-md-12">
-        <a class="btn btn-primary mb-2" asp-action="Create">Maak een spelavond aan!</a>
-    </div>
-</div>
-
-<div class="row">
-    @foreach (var item in Model)
-    {
-        <div class="col-md-4 mb-3">
-            <div class="card">
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card text-center">
                 <div class="card-body">
-                    <h5 class="card-title">Spelavond</h5>
-                    <p class="card-text"><strong>Datum en tijd: </strong>@item.DateAndTime.ToString("yyyy-MM-dd HH:mm")</p>
-                    <p class="card-text"><strong>Organizer: </strong>@(item.OrganizerName)</p>
-                    <p class="card-text"><strong>Adres: </strong>@item.Address</p>
-                    <p class="card-text"><strong>Max aantal spelers: </strong>@item.MaxPlayers</p>
-                    <div class="text-center">
-                        @if (ViewBag.SelectedGames != null)
-                        {
-                            <h5>Geselecteerd spel:</h5>
-                            foreach (var selectedGame in ViewBag.SelectedGames)
-                            {
-                                <p class="card-title">@selectedGame.Name</p>
-                            }
-                        }
-                        else
-                        {
-                            <p>No game selected.</p>
-                        }
-                    </div>
-                    <a href="@Url.Action("Details", "BoardGameNight", new { id = item.Id })"
-                        class="btn btn-primary btn-sm">Details</a>
-                    <a href="@Url.Action("Edit", "BoardGameNight", new { id = item.Id })"
-                        class="btn btn-secondary btn-sm">Edit</a>
-                    <a href="@Url.Action("Delete", "BoardGameNight", new { id = item.Id })"
-                        class="btn btn-danger btn-sm">Delete</a>
+                    <i class="fas fa-gamepad fa-3x mb-3"></i>
+                    <h5 class="card-title">Alle bordspelavonden</h5>
+                    <button class="btn btn-primary" onclick="navigateTo('AllBoardGameNights')">Bekijk</button>
                 </div>
             </div>
         </div>
-    }
+        <div class="col-md-4 mb-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <i class="fas fa-users fa-3x mb-3"></i>
+                    <h5 class="card-title">Jouw bordspelavonden</h5>
+                    <button class="btn btn-primary" onclick="navigateTo('OrganizedBoardGameNights')">Bekijk</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <i class="fas fa-user-friends fa-3x mb-3"></i>
+                    <h5 class="card-title">Borspelavonden waar je aan deelneemt</h5>
+                    <button class="btn btn-primary" onclick="navigateTo('JoinedBoardGameNights')">Bekijk</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<div class="container mt-5">
+    <div class="row mb-3">
+        <div class="col-md-12 text-center">
+            <a class="btn btn-primary" asp-action="Create">
+                <i class="fas fa-plus"></i> Bordspelavond aanmaken
+            </a>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        function navigateTo(tabName) {
+            window.location.href = `/BoardGameNight/${tabName}`;
+        }
+    </script>
+}

@@ -18,7 +18,7 @@
             <div class="card-body">
                 <p class="card-text"><strong>Beschrijving: </strong>@Model.Description</p>
                 <p class="card-text"><strong>Genre: </strong>@Model.Genre</p>
-                <p class="card-text"><strong>Speltype: </strong>@Model.GameType.Type</p>
+                <p class="card-text"><strong>Speltype: </strong>@Model.GameType!.Type</p>
                 <p class="card-text"><strong>18+: </strong>@(Model.Is18Plus ? "Ja" : "Nee")</p>
                 <div class="text-right">
                     <a href="@Url.Action("Index", "BoardGame")" class="btn btn-primary">Terug naar lijst</a>
