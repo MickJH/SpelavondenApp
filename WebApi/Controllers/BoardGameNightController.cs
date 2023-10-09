@@ -45,29 +45,62 @@ namespace WebApi.Controllers
                     return BadRequest("Je mag niet deelnemen aan de bordspelavond omdat die 18+ is.");
                 }
 
-                boardGameNight.Players ??= new List<Player>();
-
-                var userName = currentUser.UserName;
-
-                if (boardGameNight.Players.Any(player => player.Name == userName))
+                if (boardGameNight.FoodAndDrinkOptions != null)
                 {
-                    return BadRequest("Kan niet deelnemen: " + userName + " doet al mee aan de spelavond.");
+                    string message = "Je neemt deel aan de bordspelavond";
+
+                    if (currentUser.AvoidsAlcohol && !boardGameNight.FoodAndDrinkOptions.NonAlcoholic)
+                    {
+                        message += ", maar let op: Je hebt aangegeven geen alcohol te willen drinken, maar er zijn alleen dranken met alcohol beschikbaar op deze bordspelavond.";
+                    }
+
+                    if (currentUser.HasLactoseAllergy && !boardGameNight.FoodAndDrinkOptions.LactoseFree)
+                    {
+                        message += ", maar let op: Je hebt aangegeven een lactose-allergie te hebben, maar er zijn geen lactose vrije producten op deze bordspelavond.";
+                    }
+
+                    if (currentUser.HasNutAllergy && !boardGameNight.FoodAndDrinkOptions.NutFree)
+                    {
+                        message += ", maar let op: Je hebt aangegeven een notenallergie te hebben, maar er zijn geen producten zonder noten beschikbaar op deze bordspelavond.";
+                    }
+
+                    if (currentUser.IsVegetarian && !boardGameNight.FoodAndDrinkOptions.Vegetarian)
+                    {
+                        message += ", maar let op: Je hebt aangegeven vegetarisch te zijn, maar er zijn geen vegetarische opties beschikbaar op deze bordspelavond.";
+                    }
+
+                    boardGameNight.Players ??= new List<Player>();
+
+                    var userName = currentUser.UserName;
+
+                    // Check if the user is already registered for a board game night on the same date
+                    var existingJoin = boardGameNight.Players.FirstOrDefault(p =>
+                    p.Name == currentUser.UserName &&
+                    p.JoinDateTime.Date == boardGameNight.DateAndTime.Date);
+
+                    if (existingJoin != null)
+                    {
+                        return BadRequest("Je bent al aangemeld voor een bordspelavond op deze datum.");
+                    }
+
+                    // Set the JoinDateTime for the player
+                    var player = new Player { Name = currentUser.UserName, JoinDateTime = boardGameNight.DateAndTime };
+
+                    // Add the player to the board game night
+                    boardGameNight.Players ??= new List<Player>();
+                    boardGameNight.Players.Add(player);
+
+                    // Update the board game night
+                    await _boardGameNightService.UpdateBoardGameNightAsync(id, boardGameNight);
+
+                    return Ok(message);
                 }
 
-                if (boardGameNight.Players.Count >= boardGameNight.MaxPlayers)
-                {
-                    return BadRequest("Kan niet deelnemen: Maximum aantal spelers voor de spelavond is bereikt.");
-                }
-
-                var player = new Player { Name = userName };
-                boardGameNight.Players.Add(player);
-
-                await _boardGameNightService.UpdateBoardGameNightAsync(id, boardGameNight);
-                return Ok(userName + " neemt deel aan de borspelavond.");
             }
 
             return BadRequest("Gebruiker niet gevonden.");
         }
+
 
         private int CalculateAge(DateTime? dateOfBirth)
         {

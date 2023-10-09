@@ -39,7 +39,11 @@ namespace Portal.Controllers
                     Gender = model.Gender,
                     Address = model.Address,
                     Birthdate = (DateTime)model.BirthDate!,
-                    Name = model.Name
+                    Name = model.Name,
+                    HasLactoseAllergy = model.HasLactoseAllergy,
+                    HasNutAllergy = model.HasNutAllergy,
+                    IsVegetarian = model.IsVegetarian,
+                    AvoidsAlcohol = model.AvoidsAlcohol
                 };
 
                 // Attempt to create the user

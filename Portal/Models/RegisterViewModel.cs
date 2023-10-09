@@ -41,6 +41,11 @@ namespace Portal.Models
         [Display(Name = "Wachtwoord bevestigen")]
         [Compare("Password", ErrorMessage = "Wachtwoorden komen niet overeen.")]
         public string? ConfirmPassword { get; set; }
+
+        public bool HasLactoseAllergy { get; set; }
+        public bool HasNutAllergy { get; set; }
+        public bool IsVegetarian { get; set; }
+        public bool AvoidsAlcohol { get; set; }
     }
 
 

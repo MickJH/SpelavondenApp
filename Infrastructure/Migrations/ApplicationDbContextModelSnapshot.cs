@@ -33,9 +33,6 @@ namespace Infrastructure.Migrations
                     b.Property<int?>("BoardGameNightId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("BoardGameNightId1")
-                        .HasColumnType("int");
-
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -56,8 +53,6 @@ namespace Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("BoardGameNightId");
-
-                    b.HasIndex("BoardGameNightId1");
 
                     b.ToTable("BoardGames");
                 });
@@ -103,6 +98,8 @@ namespace Infrastructure.Migrations
 
                     b.HasIndex("FoodAndDrinkOptionsId");
 
+                    b.HasIndex("SelectedBoardGameId");
+
                     b.ToTable("BoardGameNights");
                 });
 
@@ -142,6 +139,9 @@ namespace Infrastructure.Migrations
                     b.Property<int?>("BoardGameNightId")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("JoinDateTime")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
@@ -155,12 +155,8 @@ namespace Infrastructure.Migrations
             modelBuilder.Entity("Core.Domain.Entities.BoardGame", b =>
                 {
                     b.HasOne("Core.Domain.Entities.BoardGameNight", null)
-                        .WithMany("AvailableBoardGames")
-                        .HasForeignKey("BoardGameNightId");
-
-                    b.HasOne("Core.Domain.Entities.BoardGameNight", null)
                         .WithMany("Games")
-                        .HasForeignKey("BoardGameNightId1");
+                        .HasForeignKey("BoardGameNightId");
 
                     b.OwnsOne("Core.Domain.Entities.GameType", "GameType", b1 =>
                         {
@@ -188,7 +184,15 @@ namespace Infrastructure.Migrations
                         .WithMany()
                         .HasForeignKey("FoodAndDrinkOptionsId");
 
+                    b.HasOne("Core.Domain.Entities.BoardGame", "SelectedBoardGame")
+                        .WithMany()
+                        .HasForeignKey("SelectedBoardGameId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("FoodAndDrinkOptions");
+
+                    b.Navigation("SelectedBoardGame");
                 });
 
             modelBuilder.Entity("Core.Domain.Entities.Player", b =>
@@ -200,8 +204,6 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("Core.Domain.Entities.BoardGameNight", b =>
                 {
-                    b.Navigation("AvailableBoardGames");
-
                     b.Navigation("Games");
 
                     b.Navigation("Players");

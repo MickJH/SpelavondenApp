@@ -8,8 +8,10 @@ namespace Core.Domain.Entities
         public string? Gender { get; set; }
         public string? Address { get; set; }
         public DateTime Birthdate { get; set; }
-        public string Role { get; set; } = "Player"; // Default role is Player
-
+        public bool HasLactoseAllergy { get; set; }
+        public bool HasNutAllergy { get; set; }
+        public bool IsVegetarian { get; set; }
+        public bool AvoidsAlcohol { get; set; }
     }
 }
 

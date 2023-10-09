@@ -62,6 +62,26 @@
             <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
         </div>
 
+        <div class="form-group">
+            <label>Dieetwensen en allergieën</label>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" asp-for="HasLactoseAllergy">
+                <label class="form-check-label" for="HasLactoseAllergy">Lactose allergie</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" asp-for="HasNutAllergy">
+                <label class="form-check-label" for="HasNutAllergy">Noten allergie</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" asp-for="IsVegetarian">
+                <label class="form-check-label" for="IsVegetarian">Vegetarisch</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" asp-for="AvoidsAlcohol">
+                <label class="form-check-label" for="AvoidsAlcohol">Geen alcohol</label>
+            </div>
+        </div>
+
         <button type="submit" class="btn btn-primary">Registreren</button>
     </form>
 </div>

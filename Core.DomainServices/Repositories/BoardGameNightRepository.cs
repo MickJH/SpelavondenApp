@@ -24,6 +24,7 @@ namespace Core.DomainServices.Repositories
                 .Include(bgn => bgn.Games)
                 .Include(bgn => bgn.Players)
                 .Include(bgn => bgn.SelectedBoardGame)
+                .Include(bgn => bgn.FoodAndDrinkOptions)
                 .ToListAsync();
 
             return boardGameNights;
@@ -31,10 +32,13 @@ namespace Core.DomainServices.Repositories
 
         public async Task<BoardGameNight> GetBoardGameNightByIdAsync(int id)
         {
-            return await _context.BoardGameNights
+            var boardGameNight = await _context.BoardGameNights
                 .Include(bgn => bgn.Games)
                 .Include(bgn => bgn.Players)
-                .FirstOrDefaultAsync(bgn => bgn.Id == id);
+                .Include(bgn => bgn.FoodAndDrinkOptions)
+                .FirstOrDefaultAsync(bgn => bgn.Id == id)!;
+
+            return boardGameNight!;
         }
 
 
