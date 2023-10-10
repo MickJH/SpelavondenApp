@@ -54,7 +54,7 @@ namespace Portal.Controllers
             }
 
             // Retrieve board game nights organized by the logged-in user
-            var organizedBoardGameNights = await _boardGameNightService.GetBoardGameNightsByOrganizerAsync(currentUser.Name!);
+            var organizedBoardGameNights = await _boardGameNightService.GetBoardGameNightsByOrganizerAsync(currentUser.UserName!);
 
             var boardGameNights = await _boardGameNightService.GetAllBoardGameNightsAsync();
 
@@ -73,6 +73,12 @@ namespace Portal.Controllers
 
             // Retrieve board game nights where the logged-in user is a participant
             var joinedBoardGameNights = await _boardGameNightService.GetBoardGameNightsByParticipantAsync(currentUser.UserName);
+
+            var boardGameNights = await _boardGameNightService.GetAllBoardGameNightsAsync();
+
+            var selectedGameIds = boardGameNights.Select(night => night.SelectedBoardGameId).ToList();
+
+            ViewBag.SelectedGameIds = selectedGameIds;
 
             return View(joinedBoardGameNights);
         }
@@ -103,6 +109,9 @@ namespace Portal.Controllers
             SetOrganizerValues(boardGameNight, user);
             SetFoodAndDrinkOptions(boardGameNight);
 
+            // Get the list of games again
+            boardGameNight.Games = (ICollection<BoardGame>?)await _boardGameService.GetAllBoardGamesAsync();
+
             // Get the selected board game
             var selectedGame = await _boardGameService.GetBoardGameByIdAsync(selectedBoardGameId);
 
@@ -115,9 +124,6 @@ namespace Portal.Controllers
             // Check if the selected board game is 18+ or if the organizer has overridden the 18+ status
             boardGameNight.Is18Plus = selectedGame.Is18Plus || boardGameNight.IsOrganizerOverride18Plus;
 
-            // Get the list of games again
-            boardGameNight.Games = (ICollection<BoardGame>?)await _boardGameService.GetAllBoardGamesAsync();
-
             if (ModelState.IsValid)
             {
                 await _boardGameNightService.CreateBoardGameNightAsync(boardGameNight);
@@ -127,12 +133,11 @@ namespace Portal.Controllers
             return View(boardGameNight);
         }
 
-
         private void SetOrganizerValues(BoardGameNight boardGameNight, Person user)
         {
             if (user != null)
             {
-                boardGameNight.OrganizerName = user.Name;
+                boardGameNight.OrganizerName = user.UserName;
                 boardGameNight.OrganizerId = user.Id;
             }
         }
@@ -159,12 +164,11 @@ namespace Portal.Controllers
         {
             var boardGameNight = await _boardGameNightService.GetBoardGameNightByIdAsync(id);
 
-            // Check if the current user is the organizer of this BoardGameNight
             var user = await _userManager.GetUserAsync(User);
-            if (boardGameNight != null && boardGameNight.OrganizerId != user.Id)
+            if (boardGameNight != null && boardGameNight.OrganizerName != user.UserName)
             {
-                // User is not the organizer, return an error or redirect
-                return Forbid(); // You can customize this behavior as needed
+                TempData["Message"] = "Je mag alleen jouw eigen bordpselavonden bewerken!";
+                return RedirectToAction(nameof(AllBoardGameNights));
             }
 
             if (boardGameNight == null)
@@ -175,8 +179,7 @@ namespace Portal.Controllers
             return View(boardGameNight);
         }
 
-
-        // POST: BoardGameNight/Edit/5
+        //POST: BoardGameNight/Edit/5
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -185,6 +188,20 @@ namespace Portal.Controllers
             if (id != boardGameNight.Id)
             {
                 return NotFound();
+            }
+
+            var user = await _userManager.GetUserAsync(User);
+            var existingBoardGameNight = await _boardGameNightService.GetBoardGameNightByIdAsync(id);
+
+            if (existingBoardGameNight == null)
+            {
+                return NotFound();
+            }
+
+            if (existingBoardGameNight.OrganizerName != user.UserName)
+            {
+                TempData["Message"] = "Je mag alleen jouw eigen bordspelavonden bewerken!";
+                return RedirectToAction(nameof(AllBoardGameNights));
             }
 
             if (ModelState.IsValid)
@@ -204,6 +221,7 @@ namespace Portal.Controllers
             return View(boardGameNight);
         }
 
+
         // GET: BoardGameNight/Delete/5
         [Authorize]
         public async Task<IActionResult> Delete(int id)
@@ -215,6 +233,13 @@ namespace Portal.Controllers
                 return NotFound();
             }
 
+            var user = await _userManager.GetUserAsync(User);
+            if (boardGameNight.OrganizerName != user.UserName)
+            {
+                TempData["Message"] = "Je mag alleen jouw eigen bordspelavond verwijderen!";
+                return RedirectToAction(nameof(AllBoardGameNights));
+            }
+
             return View(boardGameNight);
         }
 
@@ -224,9 +249,24 @@ namespace Portal.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            var boardGameNight = await _boardGameNightService.GetBoardGameNightByIdAsync(id);
+
+            if (boardGameNight == null)
+            {
+                return NotFound();
+            }
+
+            var user = await _userManager.GetUserAsync(User);
+            if (boardGameNight.OrganizerName != user.UserName)
+            {
+                TempData["Message"] = "Je mag alleen jouw eigen bordpselavond verwijderen!";
+                return RedirectToAction(nameof(AllBoardGameNights));
+            }
+
             await _boardGameNightService.DeleteBoardGameNightAsync(id);
             return RedirectToAction(nameof(Index));
         }
+
 
         // GET: BoardGameNight/Details/5
         [Authorize]

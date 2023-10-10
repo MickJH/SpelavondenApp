@@ -1,12 +1,6 @@
 @model IEnumerable<Core.Domain.Entities.BoardGame>
 
-<h2>Spellen</h2>
-
-<div class="row">
-    <div class="col-md-12">
-        <a class="btn btn-primary mb-2" asp-action="Create">Maak een spel aan!</a>
-    </div>
-</div>
+<h2>Spellen:</h2>
 
 <div class="row">
     @foreach (var item in Model)
@@ -22,15 +16,25 @@
                     <p class="card-text">@TruncateDescription(item.Description)</p>
                     <p class="card-text"><strong>Genre: </strong>@item.Genre</p>
                     <p class="card-text"><strong>Speltype: </strong>@item.GameType.Type</p>
-                    <p class="card-text"><strong>Is 18+: </strong>@(item.Is18Plus ? "Ja" : "Nee")</p>
+                    <p class="card-text"><strong>18+: </strong>@(item.Is18Plus ? "Ja" : "Nee")</p>
                     <div class="text-center">
                         <a href="@Url.Action("Details", "BoardGame", new { id = item.Id })"
-                            class="btn btn-primary btn-sm">Details</a>
+                            class="btn btn-primary btn-sm"><i class="fas fa-info-circle"></i> Details</a>
                     </div>
                 </div>
             </div>
         </div>
     }
+</div>
+
+<div class="container mt-5">
+    <div class="row mb-3">
+        <div class="col-md-12 text-center">
+            <a class="btn btn-primary" asp-action="Create">
+                <i class="fas fa-plus"></i> Bordspel aanmaken
+            </a>
+        </div>
+    </div>
 </div>
 
 @functions {

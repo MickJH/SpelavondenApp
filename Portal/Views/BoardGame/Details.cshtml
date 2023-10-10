@@ -21,11 +21,17 @@
                 <p class="card-text"><strong>Speltype: </strong>@Model.GameType!.Type</p>
                 <p class="card-text"><strong>18+: </strong>@(Model.Is18Plus ? "Ja" : "Nee")</p>
                 <div class="text-right">
-                    <a href="@Url.Action("Index", "BoardGame")" class="btn btn-primary">Terug naar lijst</a>
-                    <a href="@Url.Action("Edit", "BoardGame", new { id = Model.Id })"
-                        class="btn btn-warning">Bewerken</a>
-                    <a href="@Url.Action("Delete", "BoardGame", new { id = Model.Id })"
-                        class="btn btn-danger">Verwijderen</a>
+                    <a href="@Url.Action("Index", "BoardGame")" class="btn btn-primary">
+                        <i class="fa fa-arrow-left"></i> Terug naar lijst
+                    </a>
+
+                    <a href="@Url.Action("Edit", "BoardGame", new { id = Model.Id })" class="btn btn-warning">
+                        <i class="fa fa-edit"></i> Bewerken
+                    </a>
+
+                    <a href="@Url.Action("Delete", "BoardGame", new { id = Model.Id })" class="btn btn-danger">
+                        <i class="fa fa-trash"></i> Verwijderen
+                    </a>
                 </div>
             </div>
         </div>

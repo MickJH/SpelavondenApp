@@ -52,11 +52,12 @@
 
 
                 <div class="text-right mt-2">
-                    <a href="@Url.Action("Index", "BoardGameNight")" class="btn btn-primary">Back to List</a>
-                    <a href="@Url.Action("Edit", "BoardGameNight", new { id = Model.Id })"
-                        class="btn btn-warning">Edit</a>
-                    <a href="@Url.Action("Delete", "BoardGameNight", new { id = Model.Id })"
-                        class="btn btn-danger">Delete</a>
+                    <a href="@Url.Action("Index", "BoardGameNight")" class="btn btn-primary"><i
+                            class="fas fa-arrow-left"></i> Back to List</a>
+                    <a href="@Url.Action("Edit", "BoardGameNight", new { id = Model.Id })" class="btn btn-warning"><i
+                            class="fas fa-edit"></i> Edit</a>
+                    <a href="@Url.Action("Delete", "BoardGameNight", new { id = Model.Id })" class="btn btn-danger"><i
+                            class="fas fa-trash-alt"></i> Delete</a>
                 </div>
             </div>
         </div>

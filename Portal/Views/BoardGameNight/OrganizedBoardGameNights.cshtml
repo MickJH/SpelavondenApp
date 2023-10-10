@@ -1,12 +1,12 @@
 @model IEnumerable<Core.Domain.Entities.BoardGameNight>
 
 @{
-    ViewData["Title"] = "Jouw spelavonden";
+    ViewData["Title"] = "Deelnemende spelavonden"; // or "Jouw spelavonden"
 }
 <div class="row">
     @foreach (var item in Model)
     {
-        <div class="col-md-4 mb-3">
+        <div class="col-md-4 mb-3 mt-4">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Spelavond</h5>
@@ -14,6 +14,10 @@
                     <p class="card-text"><strong>Organizer: </strong>@(item.OrganizerName)</p>
                     <p class="card-text"><strong>Adres: </strong>@item.Address</p>
                     <p class="card-text"><strong>Max aantal spelers: </strong>@item.MaxPlayers</p>
+                    <p class="card-text"><strong>Spelers: </strong>@item.Players.Count</p>
+                    <p class="card-text"><strong>18+: </strong>@(item.Is18Plus || item.IsOrganizerOverride18Plus ? "Ja"
+                    :
+                    "Nee")</p>
 
                     <div class="text-center">
                         <h5>Geselecteerd spel:</h5>
@@ -27,13 +31,14 @@
                         }
                     </div>
 
-
-                    <a href="@Url.Action("Details", "BoardGameNight", new { id = item.Id })"
-                        class="btn btn-primary btn-sm">Details</a>
-                    <a href="@Url.Action("Edit", "BoardGameNight", new { id = item.Id })"
-                        class="btn btn-secondary btn-sm">Edit</a>
-                    <a href="@Url.Action("Delete", "BoardGameNight", new { id = item.Id })"
-                        class="btn btn-danger btn-sm">Delete</a>
+                    <div class="text-center mt-3">
+                        <a href="@Url.Action("Details", "BoardGameNight", new { id = item.Id })"
+                            class="btn btn-primary btn-sm"><i class="fas fa-info-circle"></i> Details</a>
+                        <a href="@Url.Action("Edit", "BoardGameNight", new { id = item.Id })"
+                            class="btn btn-secondary btn-sm"><i class="fas fa-edit"></i> Edit</a>
+                        <a href="@Url.Action("Delete", "BoardGameNight", new { id = item.Id })"
+                            class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Delete</a>
+                    </div>
                 </div>
             </div>
         </div>

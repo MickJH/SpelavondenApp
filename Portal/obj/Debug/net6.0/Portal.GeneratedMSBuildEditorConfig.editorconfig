@@ -9,101 +9,101 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Portal
 build_property.RootNamespace = Portal
-build_property.ProjectDir = E:\School (OneDrive)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Portal\
+build_property.ProjectDir = e:\School (OneDrive)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Portal\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = E:\School (OneDrive)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Portal
+build_property.MSBuildProjectDirectory = e:\School (OneDrive)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Portal
 build_property._RazorSourceGeneratorDebug = 
 
-[E:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/Account/Login.cshtml]
+[e:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/Account/Logout.cshtml]
+[e:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/Account/Profile.cshtml]
+[e:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/Account/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/Account/Register.cshtml]
+[e:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/BoardGameNight/AllBoardGameNights.cshtml]
+[e:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/BoardGameNight/AllBoardGameNights.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9hcmRHYW1lTmlnaHRcQWxsQm9hcmRHYW1lTmlnaHRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/BoardGameNight/Create.cshtml]
+[e:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/BoardGameNight/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9hcmRHYW1lTmlnaHRcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/BoardGameNight/Delete.cshtml]
+[e:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/BoardGameNight/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9hcmRHYW1lTmlnaHRcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/BoardGameNight/Details.cshtml]
+[e:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/BoardGameNight/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9hcmRHYW1lTmlnaHRcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/BoardGameNight/Edit.cshtml]
+[e:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/BoardGameNight/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9hcmRHYW1lTmlnaHRcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/BoardGameNight/Index.cshtml]
+[e:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/BoardGameNight/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9hcmRHYW1lTmlnaHRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/BoardGameNight/JoinedBoardGameNights.cshtml]
+[e:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/BoardGameNight/JoinedBoardGameNights.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9hcmRHYW1lTmlnaHRcSm9pbmVkQm9hcmRHYW1lTmlnaHRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/BoardGameNight/OrganizedBoardGameNights.cshtml]
+[e:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/BoardGameNight/OrganizedBoardGameNights.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9hcmRHYW1lTmlnaHRcT3JnYW5pemVkQm9hcmRHYW1lTmlnaHRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/BoardGame/Create.cshtml]
+[e:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/BoardGame/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9hcmRHYW1lXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/BoardGame/Delete.cshtml]
+[e:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/BoardGame/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9hcmRHYW1lXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/BoardGame/Details.cshtml]
+[e:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/BoardGame/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9hcmRHYW1lXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/BoardGame/Edit.cshtml]
+[e:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/BoardGame/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9hcmRHYW1lXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/BoardGame/Index.cshtml]
+[e:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/BoardGame/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9hcmRHYW1lXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/Home/Index.cshtml]
+[e:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/Shared/Error.cshtml]
+[e:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/Shared/_Layout.cshtml]
+[e:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/Shared/_ValidationScriptsPartial.cshtml]
+[e:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/_ViewImports.cshtml]
+[e:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/_ViewStart.cshtml]
+[e:/School (OneDrive)/OneDrive - Avans Hogeschool/Desktop/Avans/Jaar2_Herkansing/Periode1/ServerSide-WebFrameworksIndividueel/Portal/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
