@@ -117,7 +117,7 @@ namespace Portal.Controllers
 
             if (selectedGame == null)
             {
-                ModelState.AddModelError("", "Invalid board game selection.");  // Add appropriate error message
+                ModelState.AddModelError("", "Selecteer een spel.");  // Add appropriate error message
                 return View(boardGameNight);
             }
 
@@ -167,7 +167,7 @@ namespace Portal.Controllers
             var user = await _userManager.GetUserAsync(User);
             if (boardGameNight != null && boardGameNight.OrganizerName != user.UserName)
             {
-                TempData["Message"] = "Je mag alleen jouw eigen bordpselavonden bewerken!";
+                TempData["Message"] = "Je mag alleen jouw eigen bordspelavonden bewerken!";
                 return RedirectToAction(nameof(AllBoardGameNights));
             }
 
@@ -176,10 +176,17 @@ namespace Portal.Controllers
                 return NotFound();
             }
 
+            // Fetch the list of board games again
+            var boardGames = await _boardGameService.GetAllBoardGamesAsync();
+
+            // Populate the list of games for the boardGameNight
+            boardGameNight.Games = boardGames.ToList();
+
             return View(boardGameNight);
         }
 
-        //POST: BoardGameNight/Edit/5
+
+        // POST: BoardGameNight/Edit/5
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -217,6 +224,12 @@ namespace Portal.Controllers
 
                 return RedirectToAction(nameof(Index));
             }
+
+            // Fetch the list of board games again
+            var boardGames = await _boardGameService.GetAllBoardGamesAsync();
+
+            // Populate the list of games for the boardGameNight
+            boardGameNight.Games = boardGames.ToList();
 
             return View(boardGameNight);
         }

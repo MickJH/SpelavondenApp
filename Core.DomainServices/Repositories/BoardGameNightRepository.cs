@@ -25,6 +25,7 @@ namespace Core.DomainServices.Repositories
                 .Include(bgn => bgn.Players)
                 .Include(bgn => bgn.SelectedBoardGame)
                 .Include(bgn => bgn.FoodAndDrinkOptions)
+                .Include(bgn => bgn.Snacks)
                 .ToListAsync();
 
             return boardGameNights;
@@ -60,7 +61,7 @@ namespace Core.DomainServices.Repositories
             var boardGameNight = await _context.BoardGameNights
                 .FirstOrDefaultAsync(bgn => bgn.Id == id);
 
-            _context.BoardGameNights.Remove(boardGameNight);
+            _context.BoardGameNights.Remove(boardGameNight!);
             await _context.SaveChangesAsync();
         }
 

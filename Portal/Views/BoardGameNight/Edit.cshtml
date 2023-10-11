@@ -1,5 +1,4 @@
 @model Core.Domain.Entities.BoardGameNight
-
 @{
     ViewData["Title"] = "Bewerken";
     Layout = "_Layout";
@@ -9,24 +8,77 @@
 
 <form asp-action="Edit" asp-route-id="@Model.Id" method="post" class="needs-validation" novalidate>
     <div class="form-group">
-        <label asp-for="DateAndTime">Date and Time</label>
-        <input asp-for="DateAndTime" class="form-control" required />
-        <div class="invalid-feedback">Please enter a valid date and time.</div>
+        <label asp-for="DateAndTime">Datum & Tijd</label>
+        <input asp-for="DateAndTime" class="form-control" type="datetime-local"
+            value="@Model.DateAndTime.ToString("yyyy-MM-ddTHH:mm")" required />
+        <span asp-validation-for="DateAndTime" class="text-danger"></span>
     </div>
 
     <div class="form-group">
-        <label asp-for="Address">Address</label>
+        <label asp-for="Address">Adres</label>
         <input asp-for="Address" class="form-control" required />
-        <div class="invalid-feedback">Please enter an address.</div>
+        <span asp-validation-for="Address" class="text-danger"></span>
     </div>
 
     <div class="form-group">
-        <label asp-for="MaxPlayers">Max Players</label>
+        <label asp-for="MaxPlayers">Maximaal aantal spelers</label>
         <input asp-for="MaxPlayers" class="form-control" required />
-        <div class="invalid-feedback">Please enter the maximum number of players.</div>
+        <span asp-validation-for="MaxPlayers" class="text-danger"></span>
     </div>
 
-    <!-- Add more form fields as needed -->
+    <div class="form-group">
+        <label asp-for="SelectedBoardGameId">Selecteer Bordspel</label>
+        <select asp-for="SelectedBoardGameId" class="form-control" id="SelectedBoardGameId">
+            <option value="">-- Selecteer een bordspel --</option>
+            @if (Model.Games != null)
+            {
+                @foreach (var game in Model.Games)
+                {
+                    <option value="@game.Id" data-is18plus="@game.Is18Plus">@game.Name</option>
+                }
+            }
+        </select>
+        <span asp-validation-for="SelectedBoardGameId" class="text-danger"></span>
+    </div>
 
-    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <div class="form-group">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" asp-for="Is18Plus">
+            <label class="form-check-label">18+</label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" asp-for="BringSnacks">
+            <label class="form-check-label">Zelf snacks meenemen</label>
+        </div>
+    </div>
+
+
+    <p>Dieetwensen en allergieën:</p>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" asp-for="FoodAndDrinkOptions!.LactoseFree">
+        <label class="form-check-label">Lactosevrij</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" asp-for="FoodAndDrinkOptions!.NutFree">
+        <label class="form-check-label">Notenvrij</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" asp-for="FoodAndDrinkOptions!.Vegetarian">
+        <label class="form-check-label">Vegetarisch</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" asp-for="FoodAndDrinkOptions!.NonAlcoholic">
+        <label class="form-check-label">Alcoholvrij</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        <i class="fa fa-save"></i> Opslaan
+    </button>
+
+    <a href="/BoardGameNight/Index" type="submit" class="btn btn-secondary">
+        <i class="fa fa-arrow-left"></i> Ga terug
+    </a>
 </form>

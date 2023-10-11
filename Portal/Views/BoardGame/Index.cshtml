@@ -13,9 +13,9 @@
                 }
                 <div class="card-body">
                     <h5 class="card-title">@item.Name</h5>
-                    <p class="card-text">@TruncateDescription(item.Description)</p>
+                    <p class="card-text">@TruncateDescription(item.Description!)</p>
                     <p class="card-text"><strong>Genre: </strong>@item.Genre</p>
-                    <p class="card-text"><strong>Speltype: </strong>@item.GameType.Type</p>
+                    <p class="card-text"><strong>Speltype: </strong>@item.GameType!.Type</p>
                     <p class="card-text"><strong>18+: </strong>@(item.Is18Plus ? "Ja" : "Nee")</p>
                     <div class="text-center">
                         <a href="@Url.Action("Details", "BoardGame", new { id = item.Id })"

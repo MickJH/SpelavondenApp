@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Core.Domain.Entities;
 using Core.DomainServices.Services.Interfaces;
+using System.Text.Json;
 
 namespace WebApi.Controllers
 {
@@ -27,7 +28,7 @@ namespace WebApi.Controllers
 
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpPost("join/{id}")]
-        public async Task<IActionResult> JoinBoardGameNight(int id)
+        public async Task<IActionResult> JoinBoardGameNight(int id, [FromBody] SnackRequest snackRequest)
         {
             var boardGameNight = await _boardGameNightService.GetBoardGameNightByIdAsync(id);
 
@@ -38,6 +39,21 @@ namespace WebApi.Controllers
 
             if (currentUser != null)
             {
+                if (boardGameNight.BringSnacks)
+                {
+                    if (snackRequest == null || snackRequest.Snacks == null || snackRequest.Snacks.Count == 0)
+                    {
+                        return BadRequest("Je moet tenminste 1 snack meenemen naar deze spelavond.");
+                    }
+
+                    var snacks = snackRequest.Snacks.Select(snackItem => new Snacks { Name = snackItem.Name }).ToList();
+
+                    // Set snacks for the board game night
+                    boardGameNight.Snacks = snacks;
+                }
+
+
+
                 int userAge = CalculateAge(currentUser.Birthdate);
 
                 if (userAge < 18 && boardGameNight.Is18Plus || boardGameNight.IsOrganizerOverride18Plus)
@@ -51,32 +67,32 @@ namespace WebApi.Controllers
 
                     if (currentUser.AvoidsAlcohol && !boardGameNight.FoodAndDrinkOptions.NonAlcoholic)
                     {
-                        message += ", maar let op: Je hebt aangegeven geen alcohol te willen drinken, maar er zijn alleen dranken met alcohol beschikbaar op deze bordspelavond.";
+                        message += ", maar let op: Je hebt aangegeven geen alcohol te willen drinken, maar er zijn alleen dranken met alcohol beschikbaar op deze bordspelavond.\n";
                     }
 
                     if (currentUser.HasLactoseAllergy && !boardGameNight.FoodAndDrinkOptions.LactoseFree)
                     {
-                        message += ", maar let op: Je hebt aangegeven een lactose-allergie te hebben, maar er zijn geen lactose vrije producten op deze bordspelavond.";
+                        message += ", maar let op: Je hebt aangegeven een lactose-allergie te hebben, maar er zijn geen lactose vrije producten op deze bordspelavond.\n";
                     }
 
                     if (currentUser.HasNutAllergy && !boardGameNight.FoodAndDrinkOptions.NutFree)
                     {
-                        message += ", maar let op: Je hebt aangegeven een notenallergie te hebben, maar er zijn geen producten zonder noten beschikbaar op deze bordspelavond.";
+                        message += ", maar let op: Je hebt aangegeven een notenallergie te hebben, maar er zijn geen producten zonder noten beschikbaar op deze bordspelavond.\n";
                     }
 
                     if (currentUser.IsVegetarian && !boardGameNight.FoodAndDrinkOptions.Vegetarian)
                     {
-                        message += ", maar let op: Je hebt aangegeven vegetarisch te zijn, maar er zijn geen vegetarische opties beschikbaar op deze bordspelavond.";
+                        message += ", maar let op: Je hebt aangegeven vegetarisch te zijn, maar er zijn geen vegetarische opties beschikbaar op deze bordspelavond.\n";
                     }
 
+                    // Check if the user is already registered for a board game night on the same date
                     boardGameNight.Players ??= new List<Player>();
 
                     var userName = currentUser.UserName;
 
-                    // Check if the user is already registered for a board game night on the same date
                     var existingJoin = boardGameNight.Players.FirstOrDefault(p =>
-                    p.Name == currentUser.UserName &&
-                    p.JoinDateTime.Date == boardGameNight.DateAndTime.Date);
+                        p.Name == currentUser.UserName &&
+                        p.JoinDateTime.Date == boardGameNight.DateAndTime.Date);
 
                     if (existingJoin != null)
                     {
@@ -95,12 +111,10 @@ namespace WebApi.Controllers
 
                     return Ok(message);
                 }
-
             }
 
             return BadRequest("Gebruiker niet gevonden.");
         }
-
 
         private int CalculateAge(DateTime? dateOfBirth)
         {

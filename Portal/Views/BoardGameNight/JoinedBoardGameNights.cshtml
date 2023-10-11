@@ -1,46 +1,70 @@
 @model IEnumerable<Core.Domain.Entities.BoardGameNight>
 
 @{
-    ViewData["Title"] = "Deelnemende spelavonden"; // or "Jouw spelavonden"
+    ViewData["Title"] = "Deelnemende spelavonden";
 }
-<div class="row">
-    @foreach (var item in Model)
-    {
-        <div class="col-md-4 mb-3 mt-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Spelavond</h5>
-                    <p class="card-text"><strong>Datum en tijd: </strong>@item.DateAndTime.ToString("yyyy-MM-dd HH:mm")</p>
-                    <p class="card-text"><strong>Organizer: </strong>@(item.OrganizerName)</p>
-                    <p class="card-text"><strong>Adres: </strong>@item.Address</p>
-                    <p class="card-text"><strong>Max aantal spelers: </strong>@item.MaxPlayers</p>
-                    <p class="card-text"><strong>Spelers: </strong>@item.Players.Count</p>
-                    <p class="card-text"><strong>18+: </strong>@(item.Is18Plus || item.IsOrganizerOverride18Plus ? "Ja"
-                    :
-                    "Nee")</p>
 
-                    <div class="text-center">
-                        <h5>Geselecteerd spel:</h5>
-                        @if (item.SelectedBoardGame != null)
+<div class="container mt-4">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Spelavond</h5>
+                        <p class="card-text"><strong>Datum en tijd: </strong>@item.DateAndTime.ToString("yyyy-MM-dd HH:mm")
+                        </p>
+                        <p class="card-text"><strong>Organisator: </strong>@(item.OrganizerName)</p>
+                        <p class="card-text"><strong>Adres: </strong>@item.Address</p>
+                        <p class="card-text"><strong>Max aantal spelers: </strong>@item.MaxPlayers</p>
+                        <p class="card-text"><strong>Spelers: </strong>@item.Players.Count</p>
+                        <p class="card-text"><strong>18+: </strong>@(item.Is18Plus || item.IsOrganizerOverride18Plus ? "Ja"
+                        :
+                        "Nee")</p>
+
+                        @if (item.BringSnacks)
                         {
-                            <p class="card-title">@item.SelectedBoardGame.Name</p>
+                            <p class="card-text"><strong>Snacks: </strong>
+                                @if (item.Snacks != null && item.Snacks.Any())
+                                {
+                                    foreach (var snack in item.Snacks)
+                                    {
+                                        <span>@snack.Name</span>
+                                    }
+                                }
+                                else
+                                {
+                                    <span>Geen snacks opgegeven</span>
+                                }
+                            </p>
                         }
                         else
                         {
-                            <p>No game selected.</p>
+                            <p class="card-text"><strong>Snacks: </strong> Snacks worden geregeld door de organisator.</p>
                         }
-                    </div>
 
-                    <div class="text-center mt-3">
-                        <a href="@Url.Action("Details", "BoardGameNight", new { id = item.Id })"
-                            class="btn btn-primary btn-sm"><i class="fas fa-info-circle"></i> Details</a>
-                        <a href="@Url.Action("Edit", "BoardGameNight", new { id = item.Id })"
-                            class="btn btn-secondary btn-sm"><i class="fas fa-edit"></i> Edit</a>
-                        <a href="@Url.Action("Delete", "BoardGameNight", new { id = item.Id })"
-                            class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Delete</a>
+
+                        <div class="text-center">
+                            <h5>Geselecteerd spel:</h5>
+                            @if (item.SelectedBoardGame != null)
+                            {
+                                <p class="card-title">@item.SelectedBoardGame.Name</p>
+                            }
+                            else
+                            {
+                                <p>No game selected.</p>
+                            }
+                        </div>
+
+
+
+                        <div class="text-center mt-3">
+                            <a href="@Url.Action("Details", "BoardGameNight", new { id = item.Id })"
+                                class="btn btn-primary btn-sm"><i class="fas fa-info-circle"></i> Details</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    }
+        }
+    </div>
 </div>

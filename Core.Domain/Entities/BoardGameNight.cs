@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Core.Domain.Entities
 {
@@ -32,10 +33,13 @@ namespace Core.Domain.Entities
         public ICollection<BoardGame>? Games { get; set; }
         public FoodAndDrinkOption? FoodAndDrinkOptions { get; set; }
 
+        [Required(ErrorMessage = "Spel is verplicht.")]
         public BoardGame? SelectedBoardGame { get; set; }
 
         [Required(ErrorMessage = "Spel is verplicht.")]
         public int? SelectedBoardGameId { get; set; }
+        public List<Snacks>? Snacks { get; set; }
+        public bool BringSnacks { get; set; }
     }
 
 
@@ -56,5 +60,11 @@ namespace Core.Domain.Entities
         public int Id { get; set; }
         public string? Name { get; set; }
         public DateTime JoinDateTime { get; set; }
+    }
+
+    public class Snacks
+    {
+        public int Id { get; set; }
+        public string? Name { get; set; }
     }
 }

@@ -25,7 +25,8 @@ namespace Core.DomainServices.Repositories
 
         public async Task<BoardGame> GetBoardGameByIdAsync(int id)
         {
-            return await _context.BoardGames.FindAsync(id);
+            var boardGameById = await _context.BoardGames.FindAsync(id);
+            return boardGameById!;
         }
 
         public async Task<BoardGame> CreateBoardGameAsync(BoardGame boardGame)
