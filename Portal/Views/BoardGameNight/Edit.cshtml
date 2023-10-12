@@ -10,7 +10,7 @@
     <div class="form-group">
         <label asp-for="DateAndTime">Datum & Tijd</label>
         <input asp-for="DateAndTime" class="form-control" type="datetime-local"
-            value="@Model.DateAndTime.ToString("yyyy-MM-ddTHH:mm")" required />
+            value="@Model.DateAndTime?.ToString("yyyy-MM-ddTHH:mm")" required />
         <span asp-validation-for="DateAndTime" class="text-danger"></span>
     </div>
 

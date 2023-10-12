@@ -37,6 +37,7 @@ namespace Core.DomainServices.Repositories
                 .Include(bgn => bgn.Games)
                 .Include(bgn => bgn.Players)
                 .Include(bgn => bgn.FoodAndDrinkOptions)
+                .Include(bgn => bgn.SelectedBoardGame)
                 .FirstOrDefaultAsync(bgn => bgn.Id == id)!;
 
             return boardGameNight!;

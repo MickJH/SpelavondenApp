@@ -32,8 +32,6 @@ namespace Core.Domain.Entities
         public List<Player> Players { get; set; } = new List<Player>();
         public ICollection<BoardGame>? Games { get; set; }
         public FoodAndDrinkOption? FoodAndDrinkOptions { get; set; }
-
-        [Required(ErrorMessage = "Spel is verplicht.")]
         public BoardGame? SelectedBoardGame { get; set; }
 
         [Required(ErrorMessage = "Spel is verplicht.")]

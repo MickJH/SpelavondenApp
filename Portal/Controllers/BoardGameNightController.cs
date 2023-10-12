@@ -115,10 +115,16 @@ namespace Portal.Controllers
             // Get the selected board game
             var selectedGame = await _boardGameService.GetBoardGameByIdAsync(selectedBoardGameId);
 
+
+
             if (selectedGame == null)
             {
                 ModelState.AddModelError("", "Selecteer een spel.");  // Add appropriate error message
                 return View(boardGameNight);
+            }
+            else
+            {
+                boardGameNight.SelectedBoardGame = selectedGame;
             }
 
             // Check if the selected board game is 18+ or if the organizer has overridden the 18+ status

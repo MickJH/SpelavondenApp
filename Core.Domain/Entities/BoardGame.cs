@@ -24,13 +24,13 @@ namespace Core.Domain.Entities
         public string? PhotoUrl { get; set; }
 
         [Display(Name = "Speltype")]
-        [Required(ErrorMessage = "Speltype is verplicht.")]
         public GameType? GameType { get; set; } = new GameType();
     }
 
     [Owned]
     public class GameType
     {
+        [Required(ErrorMessage = "Speltype is verplicht.")]
         public string? Type { get; set; }
     }
 

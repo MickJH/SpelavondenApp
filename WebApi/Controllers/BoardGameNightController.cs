@@ -92,7 +92,7 @@ namespace WebApi.Controllers
 
                     var existingJoin = boardGameNight.Players.FirstOrDefault(p =>
                         p.Name == currentUser.UserName &&
-                        p.JoinDateTime.Date == boardGameNight.DateAndTime.Date);
+                        p.JoinDateTime.Date == boardGameNight.DateAndTime?.Date);
 
                     if (existingJoin != null)
                     {
@@ -100,7 +100,7 @@ namespace WebApi.Controllers
                     }
 
                     // Set the JoinDateTime for the player
-                    var player = new Player { Name = currentUser.UserName, JoinDateTime = boardGameNight.DateAndTime };
+                    var player = new Player { Name = currentUser.UserName, JoinDateTime = (DateTime)boardGameNight.DateAndTime! };
 
                     // Add the player to the board game night
                     boardGameNight.Players ??= new List<Player>();

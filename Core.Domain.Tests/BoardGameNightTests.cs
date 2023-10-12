@@ -69,15 +69,15 @@ namespace Core.Domain.Tests
         }
 
         [Fact]
-        public void BoardGameNight_SelectedBoardGame_Required()
+        public void BoardGameNight_SelectedBoardGameId_Required()
         {
             var boardGameNight = new BoardGameNight
             {
                 Address = "Europalaan 20, 3526 KS Utrecht",
                 DateAndTime = DateTime.Now,
                 MaxPlayers = 10,
-                SelectedBoardGame = null,
-                SelectedBoardGameId = 1,
+                SelectedBoardGame = new BoardGame(),
+                SelectedBoardGameId = null,
                 Games = new List<BoardGame>(),
                 FoodAndDrinkOptions = new FoodAndDrinkOption(),
                 Snacks = new List<Snacks>(),
