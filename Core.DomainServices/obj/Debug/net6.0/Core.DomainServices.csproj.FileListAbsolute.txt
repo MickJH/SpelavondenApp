@@ -36,3 +36,22 @@ E:\School (OneDrive)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\
 E:\School (OneDrive)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Core.DomainServices\obj\Debug\net6.0\Core.DomainServices.pdb
 E:\School (OneDrive)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Core.DomainServices\obj\Debug\net6.0\Core.DomainServices.genruntimeconfig.cache
 E:\School (OneDrive)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Core.DomainServices\obj\Debug\net6.0\ref\Core.DomainServices.dll
+C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Core.DomainServices\bin\Debug\net6.0\Core.DomainServices.deps.json
+C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Core.DomainServices\bin\Debug\net6.0\Core.DomainServices.runtimeconfig.json
+C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Core.DomainServices\bin\Debug\net6.0\Core.DomainServices.dll
+C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Core.DomainServices\bin\Debug\net6.0\Core.DomainServices.pdb
+C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Core.DomainServices\bin\Debug\net6.0\Core.Domain.dll
+C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Core.DomainServices\bin\Debug\net6.0\Infrastructure.dll
+C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Core.DomainServices\bin\Debug\net6.0\Core.Domain.pdb
+C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Core.DomainServices\bin\Debug\net6.0\Infrastructure.pdb
+C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Core.DomainServices\obj\Debug\net6.0\Core.DomainServices.csproj.AssemblyReference.cache
+C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Core.DomainServices\obj\Debug\net6.0\Core.DomainServices.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Core.DomainServices\obj\Debug\net6.0\Core.DomainServices.AssemblyInfoInputs.cache
+C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Core.DomainServices\obj\Debug\net6.0\Core.DomainServices.AssemblyInfo.cs
+C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Core.DomainServices\obj\Debug\net6.0\Core.DomainServices.csproj.CoreCompileInputs.cache
+C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Core.DomainServices\obj\Debug\net6.0\Core.DomainServices.csproj.CopyComplete
+C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Core.DomainServices\obj\Debug\net6.0\Core.DomainServices.dll
+C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Core.DomainServices\obj\Debug\net6.0\refint\Core.DomainServices.dll
+C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Core.DomainServices\obj\Debug\net6.0\Core.DomainServices.pdb
+C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Core.DomainServices\obj\Debug\net6.0\Core.DomainServices.genruntimeconfig.cache
+C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Core.DomainServices\obj\Debug\net6.0\ref\Core.DomainServices.dll

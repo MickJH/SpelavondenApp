@@ -18,10 +18,10 @@ namespace Core.Domain.Entities
         [DataType(DataType.Date, ErrorMessage = "Ongeldige datum.")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [FutureDate(ErrorMessage = "Spelavond moet minimaal 24 uur van te voren worden aangemaakt.")]
-        public DateTime DateAndTime { get; set; } = DateTime.Now;
+        public DateTime? DateAndTime { get; set; } = DateTime.Now;
 
         [Required(ErrorMessage = "Max aantal spelers is verplicht.")]
-        public int MaxPlayers { get; set; }
+        public int? MaxPlayers { get; set; }
 
         [Display(Name = "Is 18+")]
         public bool Is18Plus { get; set; }

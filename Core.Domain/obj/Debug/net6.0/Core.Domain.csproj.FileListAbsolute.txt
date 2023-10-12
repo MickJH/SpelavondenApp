@@ -26,3 +26,17 @@ C:\OneDrive (School)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\
 C:\OneDrive (School)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Core.Domain\obj\Debug\net6.0\Core.Domain.pdb
 C:\OneDrive (School)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Core.Domain\obj\Debug\net6.0\Core.Domain.genruntimeconfig.cache
 C:\OneDrive (School)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Core.Domain\obj\Debug\net6.0\ref\Core.Domain.dll
+C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Core.Domain\bin\Debug\net6.0\Core.Domain.deps.json
+C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Core.Domain\bin\Debug\net6.0\Core.Domain.runtimeconfig.json
+C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Core.Domain\bin\Debug\net6.0\Core.Domain.dll
+C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Core.Domain\bin\Debug\net6.0\Core.Domain.pdb
+C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Core.Domain\obj\Debug\net6.0\Core.Domain.csproj.AssemblyReference.cache
+C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Core.Domain\obj\Debug\net6.0\Core.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Core.Domain\obj\Debug\net6.0\Core.Domain.AssemblyInfoInputs.cache
+C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Core.Domain\obj\Debug\net6.0\Core.Domain.AssemblyInfo.cs
+C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Core.Domain\obj\Debug\net6.0\Core.Domain.csproj.CoreCompileInputs.cache
+C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Core.Domain\obj\Debug\net6.0\Core.Domain.dll
+C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Core.Domain\obj\Debug\net6.0\refint\Core.Domain.dll
+C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Core.Domain\obj\Debug\net6.0\Core.Domain.pdb
+C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Core.Domain\obj\Debug\net6.0\Core.Domain.genruntimeconfig.cache
+C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Core.Domain\obj\Debug\net6.0\ref\Core.Domain.dll
