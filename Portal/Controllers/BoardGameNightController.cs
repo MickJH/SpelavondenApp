@@ -240,7 +240,6 @@ namespace Portal.Controllers
             return View(boardGameNight);
         }
 
-
         // GET: BoardGameNight/Delete/5
         [Authorize]
         public async Task<IActionResult> Delete(int id)
@@ -304,9 +303,9 @@ namespace Portal.Controllers
             }
 
             // Get the selected board game based on the SelectedBoardGameId
-            var selectedGame = await _boardGameService.GetBoardGameByIdAsync((int)boardGameNight.SelectedBoardGameId!);
+            var selectedBoardGame = await _boardGameService.GetBoardGameByIdAsync((int)boardGameNight.SelectedBoardGameId!);
 
-            ViewBag.SelectedGame = selectedGame;
+            ViewBag.SelectedGame = selectedBoardGame;
 
             return View(boardGameNight);
         }

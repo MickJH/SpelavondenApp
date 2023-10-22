@@ -16,21 +16,30 @@
         </div>
         <div class="col-md-8">
             <div class="card-body">
-                <p class="card-text"><strong>Beschrijving: </strong>@Model.Description</p>
-                <p class="card-text"><strong>Genre: </strong>@Model.Genre</p>
-                <p class="card-text"><strong>Speltype: </strong>@Model.GameType!.Type</p>
-                <p class="card-text"><strong>18+: </strong>@(Model.Is18Plus ? "Ja" : "Nee")</p>
+                <p class="card-text"><strong><i class="fas fa-file-alt"></i> Beschrijving: </strong>@Model.Description
+                </p>
+                <p class="card-text"><strong><i class="fas fa-theater-masks"></i> Genre: </strong>@Model.Genre</p>
+                <p class="card-text"><strong><i class="fas fa-chess"></i> Speltype: </strong>@Model.GameType!.Type</p>
+                <p class="card-text">
+                    <strong>18+: </strong>
+                    @if (@Model.Is18Plus)
+                    {
+                        <i class="fas fa-check text-success"></i> <!-- Checkmark -->
+                    }
+                    else
+                    {
+                        <i class="fas fa-times text-danger"></i> <!-- Cross (X) -->
+                    }
+                </p>
                 <div class="text-right">
                     <a href="@Url.Action("Index", "BoardGame")" class="btn btn-primary">
-                        <i class="fa fa-arrow-left"></i> Terug naar lijst
+                        <i class="fas fa-arrow-left"></i> Terug naar lijst
                     </a>
-
                     <a href="@Url.Action("Edit", "BoardGame", new { id = Model.Id })" class="btn btn-warning">
-                        <i class="fa fa-edit"></i> Bewerken
+                        <i class="fas fa-edit"></i> Bewerken
                     </a>
-
                     <a href="@Url.Action("Delete", "BoardGame", new { id = Model.Id })" class="btn btn-danger">
-                        <i class="fa fa-trash"></i> Verwijderen
+                        <i class="fas fa-trash"></i> Verwijderen
                     </a>
                 </div>
             </div>

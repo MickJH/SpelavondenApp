@@ -6,43 +6,62 @@
 
 <div class="container mt-4">
     <div class="row">
+        <div class="col-md-12">
+            <div class="d-flex justify-content-start mb-3">
+                <a href="/BoardGameNight/Index" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Ga terug
+                </a>
+            </div>
+        </div>
         @foreach (var item in Model)
         {
             <div class="col-md-4 mb-3">
-                <div class="card">
+                <div class="card h-100">
                     <div class="card-body">
                         <h5 class="card-title">Spelavond</h5>
-                        <p class="card-text"><strong>Datum en tijd: </strong>@item.DateAndTime?.ToString("yyyy-MM-dd HH:mm")
+                        <p class="card-text"><strong><i class="fas fa-calendar-days"></i> Datum en tijd:</strong>
+                            @item.DateAndTime?.ToString("yyyy-MM-dd HH:mm")
                         </p>
-                        <p class="card-text"><strong>Organisator: </strong>@(item.OrganizerName)</p>
-                        <p class="card-text"><strong>Adres: </strong>@item.Address</p>
-                        <p class="card-text"><strong>Max aantal spelers: </strong>@item.MaxPlayers</p>
-                        <p class="card-text"><strong>Spelers: </strong>@item.Players.Count</p>
-                        <p class="card-text"><strong>18+: </strong>@(item.Is18Plus || item.IsOrganizerOverride18Plus ? "Ja"
-                        :
-                        "Nee")</p>
+                        <p class="card-text"><strong><i class="fas fa-user"></i> Organisator:</strong>
+                            @(item.OrganizerName)
+                        </p>
+                        <p class "card-text"><strong><i class="fas fa-location-dot"></i> Adres:</strong> @item.Address</p>
+                        <div class="card-text">
+                            <strong><i class="fas fa-users"></i> Spelers: </strong> @item.Players.Count/@item.MaxPlayers
+                        </div>
+                        <p class="card-text"><strong><i class="fas fa-id-card"></i> 18+:</strong>
+                            @if (item.Is18Plus || item.IsOrganizerOverride18Plus)
+                            {
+                                <i class="fas fa-check text-success"></i> <!-- Checkmark -->
+                            }
+                            else
+                            {
+                                <i class="fas fa-times text-danger"></i> <!-- Cross (X) -->
+                            }
+                        </p>
 
                         @if (item.BringSnacks)
                         {
-                            <p class="card-text"><strong>Snacks: </strong>
+                            <p class="card-text"><strong><i class="fas fa-cookie"></i> Snacks:</strong>
                                 @if (item.Snacks != null && item.Snacks.Any())
                                 {
                                     foreach (var snack in item.Snacks)
                                     {
-                                        <span>@snack.Name</span>
+                                        <i class="fas fa-cookie"></i> @snack.Name
                                     }
                                 }
                                 else
                                 {
-                                    <span>Geen snacks opgegeven</span>
+                                    <i class="fas fa-cookie"></i> <span>Geen snacks opgegeven</span>
                                 }
                             </p>
                         }
                         else
                         {
-                            <p class="card-text"><strong>Snacks: </strong> Snacks worden geregeld door de organisator.</p>
+                            <p class="card-text"><strong><i class="fas fa-cookie"></i> Snacks:</strong> Snacks worden
+                                geregeld door de organisator.
+                            </p>
                         }
-
 
                         <div class="text-center">
                             <h5>Geselecteerd spel:</h5>
@@ -56,9 +75,7 @@
                             }
                         </div>
 
-
-
-                        <div class="text-center mt-3">
+                        <div class="card-footer text-center">
                             <a href="@Url.Action("Details", "BoardGameNight", new { id = item.Id })"
                                 class="btn btn-primary btn-sm"><i class="fas fa-info-circle"></i> Details</a>
                         </div>

@@ -1,12 +1,11 @@
 @model Core.Domain.Entities.BoardGameNight
 
 @{
-    ViewData["Title"] = "Create Board Game Night";
+    ViewData["Title"] = "Aanmaken Spelavond";
     Layout = "_Layout";
 }
 
 <script src="~/js/script.js"></script>
-
 
 @foreach (var modelState in ViewData.ModelState.Values)
 {
@@ -16,7 +15,6 @@
     }
 }
 
-
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-6 offset-md-3">
@@ -25,28 +23,28 @@
             <form asp-action="Create" method="post" class="needs-validation" novalidate>
 
                 <div class="form-group">
-                    <label asp-for="DateAndTime">Datum & Tijd</label>
+                    <label asp-for="DateAndTime"><i class="fas fa-calendar-days"></i> Datum & Tijd</label>
                     <input asp-for="DateAndTime" class="form-control" type="datetime-local"
                         value="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" required />
                     <span asp-validation-for="DateAndTime" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="Address">Adres</label>
+                    <label asp-for="Address"><i class="fa-solid fa-location-dot"></i> Adres</label>
                     <input asp-for="Address" class="form-control" required />
                     <span asp-validation-for="Address" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="MaxPlayers">Maximaal aantal spelers</label>
+                    <label asp-for="MaxPlayers"><i class="fas fa-users"></i> Maximaal aantal spelers</label>
                     <input asp-for="MaxPlayers" class="form-control" required />
                     <span asp-validation-for="MaxPlayers" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="Games">Select Board Games</label>
+                    <label asp-for="Games"><i class="fas fa-dice"></i> Selecteer een spel:</label>
                     <select asp-for="SelectedBoardGameId" class="form-control" id="SelectedBoardGameId">
-                        <option value="">-- Select a board game --</option>
+                        <option value="">-</option>
                         @if (Model.Games != null)
                         {
                             @foreach (var game in Model.Games)
@@ -62,42 +60,54 @@
 
                 <div class="form-group">
                     <label asp-for="Is18Plus" class="form-check-label">
+                        <i class="fas fa-id-card"></i> 18+
                         <input asp-for="Is18Plus" class="form-check-input" type="checkbox" id="Is18Plus" />
-                        18+
                     </label>
                 </div>
 
                 <div class="form-group">
                     <label asp-for="BringSnacks" class="form-check-label">
+                        <i class="fas fa-cookie"></i> Gasten zelf snacks laten meenemen
                         <input asp-for="BringSnacks" class="form-check-input" type="checkbox" id="BringSnacks" />
-                        Zelf snacks meenemen
                     </label>
                 </div>
 
-                <p>Zit jouw favoriete borspel er niet bij?</p>
+
+
+                <p>Zit jouw favoriete bordspel er niet bij?</p>
                 <a href="/BoardGame/Create" class="btn btn-secondary">Maak bordspel aan</a>
 
                 <p>Dieetwensen en allergieën:</p>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" asp-for="FoodAndDrinkOptions!.LactoseFree">
-                    <label class="form-check-label">Lactosevrij</label>
+                    <label class="form-check-label">
+                        Lactosevrij
+                        <input class="form-check-input" type="checkbox" asp-for="FoodAndDrinkOptions!.LactoseFree">
+                    </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" asp-for="FoodAndDrinkOptions!.NutFree">
-                    <label class="form-check-label">Notenvrij</label>
+                    <label class="form-check-label">
+                        Notenvrij
+                        <input class="form-check-input" type="checkbox" asp-for="FoodAndDrinkOptions!.NutFree">
+                    </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" asp-for="FoodAndDrinkOptions!.Vegetarian">
-                    <label class="form-check-label">Vegetarisch</label>
+                    <label class="form-check-label">
+                        Vegetarisch
+                        <input class="form-check-input" type="checkbox" asp-for="FoodAndDrinkOptions!.Vegetarian">
+                    </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" asp-for="FoodAndDrinkOptions!.NonAlcoholic">
-                    <label class="form-check-label">Alcoholvrij</label>
+                    <label class="form-check-label">
+                        Alcoholvrij
+                        <input class="form-check-input" type="checkbox" asp-for="FoodAndDrinkOptions!.NonAlcoholic">
+                    </label>
                 </div>
 
                 <div class="text-center mt-3">
                     <button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Aanmaken</button>
                 </div>
+
+
             </form>
         </div>
     </div>

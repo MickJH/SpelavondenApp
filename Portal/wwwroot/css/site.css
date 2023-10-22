@@ -1,0 +1,14 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Montserrat, sans-serif;
+}
+
+.card-body {
+  max-height: 700px;
+  overflow-y: auto;
+}

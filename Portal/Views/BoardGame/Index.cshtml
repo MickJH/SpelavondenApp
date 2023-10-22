@@ -1,26 +1,43 @@
 @model IEnumerable<Core.Domain.Entities.BoardGame>
 
+@{
+    ViewData["Title"] = "Spellen";
+    Layout = "_Layout";
+}
+
 <h2>Spellen:</h2>
 
 <div class="row">
     @foreach (var item in Model)
     {
         <div class="col-md-3 mb-3">
-            <div class="card">
+            <div class="card h-100">
                 @if (!string.IsNullOrEmpty(item.PhotoUrl))
                 {
                     <img src="@item.PhotoUrl" class="card-img-top" alt="Board Game Image">
                 }
                 <div class="card-body">
                     <h5 class="card-title">@item.Name</h5>
-                    <p class="card-text">@TruncateDescription(item.Description!)</p>
-                    <p class="card-text"><strong>Genre: </strong>@item.Genre</p>
-                    <p class="card-text"><strong>Speltype: </strong>@item.GameType!.Type</p>
-                    <p class="card-text"><strong>18+: </strong>@(item.Is18Plus ? "Ja" : "Nee")</p>
-                    <div class="text-center">
-                        <a href="@Url.Action("Details", "BoardGame", new { id = item.Id })"
-                            class="btn btn-primary btn-sm"><i class="fas fa-info-circle"></i> Details</a>
-                    </div>
+                    <p class="card-text"><strong><i class="fas fa-file-alt"></i> Beschrijving:
+                        </strong>@TruncateDescription(item.Description!)
+                    </p>
+                    <p class="card-text"><i class="fas fa-theater-masks"></i> <strong>Genre: </strong>@item.Genre</p>
+                    <p class="card-text"><i class="fas fa-chess"></i> <strong>Speltype: </strong>@item.GameType!.Type</p>
+                    <p class="card-text">
+                        <strong>18+: </strong>
+                        @if (item.Is18Plus)
+                        {
+                            <i class="fas fa-check text-success"></i> <!-- Checkmark -->
+                        }
+                        else
+                        {
+                            <i class="fas fa-times text-danger"></i> <!-- Cross (X) -->
+                        }
+                    </p>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="@Url.Action("Details", "BoardGame", new { id = item.Id })" class="btn btn-primary btn-sm"><i
+                            class="fas fa-info-circle"></i> Details</a>
                 </div>
             </div>
         </div>

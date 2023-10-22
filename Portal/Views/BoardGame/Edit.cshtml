@@ -9,23 +9,23 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-6 offset-md-3">
-            <h2 class="text-center">Pas spel aan:</h2>
+            <h2 class="text-center"><i class="fas fa-edit"></i> Pas spel aan:</h2>
 
             <form asp-action="Edit" asp-route-id="@Model.Id" method="post" class="needs-validation" novalidate>
                 <div class="form-group">
-                    <label asp-for="Name">Naam</label>
+                    <label asp-for="Name"><i class="fas fa-file-signature"></i> Naam</label>
                     <input asp-for="Name" class="form-control" required />
                     <span asp-validation-for="Name" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="Description">Beschrijving</label>
+                    <label asp-for="Description"><i class="fas fa-file-alt"></i> Beschrijving</label>
                     <textarea asp-for="Description" class="form-control" required></textarea>
                     <span asp-validation-for="Description" class="text-danger"></span>
                 </div>
 
-                <div class="form-group">
-                    <label asp-for="Genre">Genre</label>
+                <div class "form-group">
+                    <label asp-for="Genre"><i class="fas fa-theater-masks"></i> Genre</label>
                     <select asp-for="Genre" asp-items="Html.GetEnumSelectList<GenreType>()" class="form-control"
                         required>
                         <option value="">Selecteer een genre</option>
@@ -34,28 +34,28 @@
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="GameType!.Type">Speltype (Kaartspel, Bordspel)</label>
+                    <label asp-for="GameType!.Type"><i class="fas fa-chess"></i> Speltype (Kaartspel, Bordspel)</label>
                     <input asp-for="GameType!.Type" class="form-control" />
                     <span asp-validation-for="GameType!.Type" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="Is18Plus">18+</label>
+                    <label asp-for="Is18Plus"><i class="fas fa-id-card"></i> 18+</label>
                     <input asp-for="Is18Plus" class="form-check-input" type="checkbox" />
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="PhotoUrl">URL van de foto</label>
+                    <label asp-for="PhotoUrl"><i class="fas fa-image"></i> URL van de foto</label>
                     <input asp-for="PhotoUrl" class="form-control" />
                     <span asp-validation-for="PhotoUrl" class="text-danger"></span>
                 </div>
 
                 <button type="submit" class="btn btn-primary">
-                    <i class="fa fa-save"></i> Opslaan
+                    <i class="fas fa-save"></i> Opslaan
                 </button>
 
                 <a href="/BoardGame/Index" type="submit" class="btn btn-secondary">
-                    <i class="fa fa-arrow-left"></i> Ga terug
+                    <i class="fas fa-arrow-left"></i> Ga terug
                 </a>
             </form>
         </div>
