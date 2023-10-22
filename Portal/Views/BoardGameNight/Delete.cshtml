@@ -24,7 +24,10 @@
     </dl>
 
     <form asp-action="Delete" asp-route-id="@Model.Id" method="post">
-        <input type="submit" value="Verwijderen" class="btn btn-danger" />
-        <a asp-action="Index" class="btn btn-primary">Terug naar de lijst</a>
+        <a asp-action="Index" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Terug naar de lijst</a>
+        <button type="submit" class="btn btn-danger">
+            <i class="fas fa-trash-alt"></i> Verwijderen
+        </button>
     </form>
+
 </div>

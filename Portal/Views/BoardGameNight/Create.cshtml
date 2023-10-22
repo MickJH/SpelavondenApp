@@ -7,14 +7,6 @@
 
 <script src="~/js/script.js"></script>
 
-@foreach (var modelState in ViewData.ModelState.Values)
-{
-    foreach (var error in modelState.Errors)
-    {
-        <div class="text-danger">@error.ErrorMessage</div>
-    }
-}
-
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-6 offset-md-3">
