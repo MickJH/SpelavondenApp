@@ -281,6 +281,12 @@ namespace Portal.Controllers
                 return RedirectToAction(nameof(AllBoardGameNights));
             }
 
+            if (boardGameNight.Players.Count() > 0)
+            {
+                TempData["Message"] = "Je kunt een bordspelavond niet verwijderen als er al spelers zijn aangemeld!";
+                return RedirectToAction(nameof(AllBoardGameNights));
+            }
+
             await _boardGameNightService.DeleteBoardGameNightAsync(id);
             return RedirectToAction(nameof(Index));
         }
