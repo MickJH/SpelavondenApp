@@ -107,7 +107,6 @@ namespace Portal.Controllers
         {
             var user = await _userManager.GetUserAsync(User);
             SetOrganizerValues(boardGameNight, user);
-            SetFoodAndDrinkOptions(boardGameNight);
 
             // Get the list of games again
             boardGameNight.Games = (ICollection<BoardGame>?)await _boardGameService.GetAllBoardGamesAsync();
@@ -147,22 +146,6 @@ namespace Portal.Controllers
                 boardGameNight.OrganizerId = user.Id;
             }
         }
-
-        private void SetFoodAndDrinkOptions(BoardGameNight boardGameNight)
-        {
-            var foodAndDrinkOptions = new FoodAndDrinkOption
-            {
-                LactoseFree = Request.Form["FoodAndDrinkOptions.LactoseFree"] == "on",
-                NutFree = Request.Form["FoodAndDrinkOptions.NutFree"] == "on",
-                Vegetarian = Request.Form["FoodAndDrinkOptions.Vegetarian"] == "on",
-                NonAlcoholic = Request.Form["FoodAndDrinkOptions.NonAlcoholic"] == "on"
-            };
-
-            boardGameNight.FoodAndDrinkOptions = foodAndDrinkOptions;
-        }
-
-
-
 
         // GET: BoardGameNight/Edit/5
         [Authorize]
