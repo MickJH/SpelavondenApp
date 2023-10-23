@@ -33,6 +33,10 @@ namespace Portal.Controllers
             return View(model);
         }
 
+        public IActionResult AboutUs()
+        {
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

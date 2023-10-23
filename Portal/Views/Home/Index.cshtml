@@ -6,7 +6,6 @@
 }
 
 <div class="container text-center mt-5">
-
     @if (Model!.IsAuthenticated)
     {
         <h1 class="display-3 mb-4">Welkom! @Model.UserName</h1>
@@ -15,12 +14,17 @@
     else
     {
         <h1 class="display-3 mb-4">Welkom!</h1>
-        <h3>Wil jij graag jouw Nederlands verbeteren op een leuke manier? Dan ben je hier op het juiste adres.</h3>
-
+        <h4>Wil jij graag jouw Nederlands verbeteren op een leuke manier? Dan ben je hier op het juiste adres.
+            <br>
+            <br>
+            Meer weten over ons?
+            <a class="btn btn-dark btn-lg" href="/Home/AboutUs">Klik hier!</a>
+        </h4>
         <img src="~/images/GamesHomePagePhoto.jpg" alt="Home page Photo" class="img-fluid" style="max-height: 500px;">
         <p>
             <a class="btn btn-primary btn-lg mt-3" href="/Account/Login">Inloggen</a>
             <a class="btn btn-secondary btn-lg mt-3" href="/Account/Register">Registreren</a>
         </p>
+
     }
 </div>

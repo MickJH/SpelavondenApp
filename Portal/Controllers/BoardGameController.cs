@@ -1,5 +1,6 @@
 using Core.Domain.Entities;
 using Core.DomainServices.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Portal.Controllers
@@ -13,6 +14,7 @@ namespace Portal.Controllers
             _boardGameService = boardGameService;
         }
 
+        [Authorize]
         // GET: BoardGame
         public async Task<IActionResult> Index()
         {
@@ -20,6 +22,7 @@ namespace Portal.Controllers
             return View(boardGames);
         }
 
+        [Authorize]
         // GET: BoardGame/Create
         public IActionResult Create()
         {
@@ -27,6 +30,7 @@ namespace Portal.Controllers
         }
 
         // POST: BoardGame/Create
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(BoardGame boardGame)
@@ -40,6 +44,7 @@ namespace Portal.Controllers
         }
 
         // GET: BoardGame/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int id)
         {
             var boardGame = await _boardGameService.GetBoardGameByIdAsync(id);
@@ -51,6 +56,7 @@ namespace Portal.Controllers
         }
 
         // POST: BoardGame/Edit/5
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, BoardGame boardGame)
@@ -69,6 +75,7 @@ namespace Portal.Controllers
         }
 
         // GET: BoardGame/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int id)
         {
             var boardGame = await _boardGameService.GetBoardGameByIdAsync(id);
@@ -80,6 +87,7 @@ namespace Portal.Controllers
         }
 
         // POST: BoardGame/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -89,6 +97,7 @@ namespace Portal.Controllers
         }
 
         // GET: BoardGame/Details/5
+        [Authorize]
         public async Task<IActionResult> Details(int id)
         {
             // Fetch the BoardGame by id
