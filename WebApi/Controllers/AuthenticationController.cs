@@ -34,8 +34,8 @@ namespace WebApi.Controllers
                     var securityTokenDescriptor = new SecurityTokenDescriptor
                     {
                         Subject = (await _signInManager.CreateUserPrincipalAsync(user)).Identities.First(),
-                        Expires = DateTime.Now.AddMinutes(int.Parse(_configuration["BearerTokens:ExpiryMinutes"])),
-                        SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["BearerTokens:Key"])), SecurityAlgorithms.HmacSha256Signature)
+                        Expires = DateTime.Now.AddMinutes(int.Parse(_configuration["BearerTokens:ExpiryMinutes"]!)),
+                        SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["BearerTokens:Key"]!)), SecurityAlgorithms.HmacSha256Signature)
                     };
 
                     var handler = new JwtSecurityTokenHandler();

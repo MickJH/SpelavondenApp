@@ -53,7 +53,7 @@ builder.Services.AddAuthentication().AddJwtBearer(JwtBearerDefaults.Authenticati
 {
     options.TokenValidationParameters.ValidateAudience = false;
     options.TokenValidationParameters.ValidateIssuer = false;
-    options.TokenValidationParameters.IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["BearerTokens:Key"]));
+    options.TokenValidationParameters.IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["BearerTokens:Key"]!));
 });
 
 
