@@ -23,6 +23,7 @@ namespace Core.Domain.Entities
         [Display(Name = "Foto URL")]
         public string? PhotoUrl { get; set; }
 
+        [Required(ErrorMessage = "Speltype is verplicht.")]
         [Display(Name = "Speltype")]
         public GameType? GameType { get; set; } = new GameType();
     }
@@ -30,7 +31,6 @@ namespace Core.Domain.Entities
     [Owned]
     public class GameType
     {
-        [Required(ErrorMessage = "Speltype is verplicht.")]
         public string? Type { get; set; }
     }
 

@@ -3,23 +3,26 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Domain", "Core.Domain\Core.Domain.csproj", "{E296811F-A888-442E-B94D-32EB71706F2D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Domain", "Core.Domain\Core.Domain.csproj", "{E296811F-A888-442E-B94D-32EB71706F2D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.DomainServices", "Core.DomainServices\Core.DomainServices.csproj", "{4A38476E-A534-4F59-8D19-A4007316ABEA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.DomainServices", "Core.DomainServices\Core.DomainServices.csproj", "{4A38476E-A534-4F59-8D19-A4007316ABEA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{6D0391E3-F390-4E7E-9F49-883EC1F76018}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{6D0391E3-F390-4E7E-9F49-883EC1F76018}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{9FFB61DB-34DC-4C0C-B415-60EE5713E71A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "WebApi\WebApi.csproj", "{9FFB61DB-34DC-4C0C-B415-60EE5713E71A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portal", "Portal\Portal.csproj", "{0F8C8D1D-1122-4B3C-B9A2-1328F5341188}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portal", "Portal\Portal.csproj", "{0F8C8D1D-1122-4B3C-B9A2-1328F5341188}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Domain.Tests", "Core.Domain.Tests\Core.Domain.Tests.csproj", "{F2077144-47F2-44D4-B39F-EBB1571CACB8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.DomainServices.Tests", "Core.DomainServices.Tests\Core.DomainServices.Tests.csproj", "{E233DF5B-DDED-4303-8EDF-3BA2FF910B16}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portal.Tests", "Portal.Tests\Portal.Tests.csproj", "{8F325ED3-F805-401A-AA37-0C38684A6520}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{E296811F-A888-442E-B94D-32EB71706F2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -42,5 +45,20 @@ Global
 		{0F8C8D1D-1122-4B3C-B9A2-1328F5341188}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F8C8D1D-1122-4B3C-B9A2-1328F5341188}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F8C8D1D-1122-4B3C-B9A2-1328F5341188}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2077144-47F2-44D4-B39F-EBB1571CACB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2077144-47F2-44D4-B39F-EBB1571CACB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2077144-47F2-44D4-B39F-EBB1571CACB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2077144-47F2-44D4-B39F-EBB1571CACB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E233DF5B-DDED-4303-8EDF-3BA2FF910B16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E233DF5B-DDED-4303-8EDF-3BA2FF910B16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E233DF5B-DDED-4303-8EDF-3BA2FF910B16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E233DF5B-DDED-4303-8EDF-3BA2FF910B16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F325ED3-F805-401A-AA37-0C38684A6520}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F325ED3-F805-401A-AA37-0C38684A6520}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F325ED3-F805-401A-AA37-0C38684A6520}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F325ED3-F805-401A-AA37-0C38684A6520}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
