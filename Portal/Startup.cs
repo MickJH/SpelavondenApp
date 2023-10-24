@@ -60,7 +60,7 @@ namespace Portal
                 logging.AddDebug(); // Add debug logger
             });
 
-
+            services.AddDatabaseDeveloperPageExceptionFilter();
             services.AddControllersWithViews();
         }
 
@@ -69,11 +69,7 @@ namespace Portal
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-                app.UseHsts();
+                app.UseMigrationsEndPoint();
             }
 
             app.UseHttpsRedirection();

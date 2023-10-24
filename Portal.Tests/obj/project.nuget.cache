@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "QLt+L44dORc/vhqQxaibD1Py3KiZTTQyXmnWRbKBXPHlGolxJQqzPw3vGkx8cRUxuJC8HbneSsGfrIlRvjch3Q==",
+  "dgSpecHash": "WiveLgC6vMw+BFxOinF3Jy5RgM5VUklL1QHK/RhutGSKPkvSmFqBF3aXu+UgwRGmFhehCJMMGb0tTXHS/c3bRA==",
   "success": true,
   "projectFilePath": "C:\\Users\\mickj\\OneDrive - Avans Hogeschool\\Desktop\\Avans\\Jaar2_Herkansing\\Periode1\\ServerSide-WebFrameworksIndividueel\\Portal.Tests\\Portal.Tests.csproj",
   "expectedPackageFiles": [
@@ -36,6 +36,7 @@
     "C:\\Users\\mickj\\.nuget\\packages\\hotchocolate.validation\\13.5.1\\hotchocolate.validation.13.5.1.nupkg.sha512",
     "C:\\Users\\mickj\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.0\\microsoft.aspnetcore.cryptography.internal.6.0.0.nupkg.sha512",
     "C:\\Users\\mickj\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.0\\microsoft.aspnetcore.cryptography.keyderivation.6.0.0.nupkg.sha512",
+    "C:\\Users\\mickj\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\6.0.0\\microsoft.aspnetcore.diagnostics.entityframeworkcore.6.0.0.nupkg.sha512",
     "C:\\Users\\mickj\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\6.0.0\\microsoft.aspnetcore.identity.entityframeworkcore.6.0.0.nupkg.sha512",
     "C:\\Users\\mickj\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\mickj\\.nuget\\packages\\microsoft.codecoverage\\17.7.1\\microsoft.codecoverage.17.7.1.nupkg.sha512",
