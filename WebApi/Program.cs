@@ -5,8 +5,6 @@ using Core.DomainServices.Repositories;
 using Core.DomainServices.Repositories.Interfaces;
 using Core.DomainServices.Services;
 using Core.DomainServices.Services.Interfaces;
-using dotenv.net;
-using DotNetEnv;
 using Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -22,17 +20,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Load environment variables
-DotEnv.Load();
+var connectionString = builder.Configuration.GetConnectionString("ApplicationDbContext");
 
-// Get the password from the environment variables
-var password = Env.GetString("DB_PASSWORD");
-
-var connectionString = builder.Configuration.GetConnectionString("ApplicationDbContext")!
-    .Replace("{password}", password);
-
-var identityConnectionString = builder.Configuration.GetConnectionString("IdentityDbContext")!
-    .Replace("{password}", password);
+var identityConnectionString = builder.Configuration.GetConnectionString("IdentityDbContext");
 
 // Configure and add your ApplicationDbContext for application data
 builder.Services.AddDbContext<ApplicationDbContext>(options =>

@@ -6,8 +6,6 @@ using Core.DomainServices.Services.Interfaces;
 using Infrastructure;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using dotenv.net;
-using DotNetEnv;
 
 namespace Portal
 {
@@ -22,17 +20,9 @@ namespace Portal
 
         public void ConfigureServices(IServiceCollection services)
         {
-            // Load environment variables
-            DotEnv.Load();
+            var connectionString = Configuration.GetConnectionString("ApplicationDbContext");
 
-            // Get the password from the environment variables
-            var password = Env.GetString("DB_PASSWORD");
-
-            var connectionString = Configuration.GetConnectionString("ApplicationDbContext")!
-                .Replace("{password}", password);
-
-            var identityConnectionString = Configuration.GetConnectionString("IdentityDbContext")!
-                .Replace("{password}", password);
+            var identityConnectionString = Configuration.GetConnectionString("IdentityDbContext");
 
             // Configure and add your ApplicationDbContext for application data
             services.AddDbContext<ApplicationDbContext>(options =>
