@@ -48,11 +48,6 @@ namespace Portal.Controllers
         {
             var currentUser = await _userManager.GetUserAsync(User);
 
-            if (currentUser == null)
-            {
-                return RedirectToAction("Login", "Account"); // Redirect to login if the user is not authenticated
-            }
-
             // Retrieve board game nights organized by the logged-in user
             var organizedBoardGameNights = await _boardGameNightService.GetBoardGameNightsByOrganizerAsync(currentUser.UserName!);
 
