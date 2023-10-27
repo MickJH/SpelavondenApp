@@ -8,10 +8,10 @@ namespace Infrastructure
     {
         public IdentityDbContext(DbContextOptions<IdentityDbContext> options) : base(options)
         {
-            Persons = Set<Person>(); // Add DbSet for Person
+            Persons = Set<Person>();
         }
 
-        public DbSet<Person> Persons { get; set; }  // Add DbSet for Person
+        public DbSet<Person> Persons { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -9,4 +9,3 @@ namespace Core.Domain.Entities
         public bool NonAlcoholic { get; set; }
     }
 }
-

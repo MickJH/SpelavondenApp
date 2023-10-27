@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HPp1QxUK/IAfxv7rQ8P/mGANA8HketXRdUizXg9pBkCXaRyuD+FvGEPyqMaIGlCxmHK0CTWgLk0Itt+84V/QdA==",
+  "dgSpecHash": "OAWYAO2mJI3Ef0/A5mtRX0YGHsTVCu6PgMZCiaUssTzchB3OhH7tsoE/AE+Z6SleZYm7itxsmi+5zrP5UKcoIQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mickj\\OneDrive - Avans Hogeschool\\Desktop\\Avans\\Jaar2_Herkansing\\Periode1\\ServerSide-WebFrameworksIndividueel\\WebApi\\WebApi.csproj",
+  "projectFilePath": "E:\\School (OneDrive)\\OneDrive - Avans Hogeschool\\Desktop\\Avans\\Jaar2_Herkansing\\Periode1\\ServerSide-WebFrameworksIndividueel\\WebApi\\WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mickj\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\mickj\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
