@@ -61,6 +61,10 @@ builder.Services.AddGraphQLServer()
 
 var app = builder.Build();
 
+app.UseDeveloperExceptionPage();
+
+app.UseHttpsRedirection();
+
 app.UseSwagger();
 
 app.UseSwaggerUI();
