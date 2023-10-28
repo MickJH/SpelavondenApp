@@ -364,3 +364,4 @@ C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Period
 C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Portal.Tests\obj\Debug\net7.0\Portal.Tests.pdb
 C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Portal.Tests\obj\Debug\net7.0\Portal.Tests.genruntimeconfig.cache
 C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Portal.Tests\obj\Debug\net7.0\ref\Portal.Tests.dll
+E:\School (OneDrive)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Portal.Tests\bin\Debug\net7.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll

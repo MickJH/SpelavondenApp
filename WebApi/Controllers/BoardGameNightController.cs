@@ -99,6 +99,12 @@ namespace WebApi.Controllers
                         return BadRequest("Je bent al aangemeld voor een bordspelavond op deze datum.");
                     }
 
+                    // Check if the maximum number of players is reached
+                    if (boardGameNight.MaxPlayers.HasValue && boardGameNight.Players.Count >= boardGameNight.MaxPlayers)
+                    {
+                        return BadRequest("Het maximum aantal spelers voor deze bordspelavond is bereikt.");
+                    }
+
                     // Set the JoinDateTime for the player
                     var player = new Player { Name = currentUser.UserName, JoinDateTime = (DateTime)boardGameNight.DateAndTime! };
 
