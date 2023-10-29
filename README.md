@@ -11,10 +11,10 @@ GraphQL: De API voor deze applicatie is geïmplementeerd met GraphQL, waardoor c
 
 Identity: ASP.NET Core Identity wordt gebruikt voor gebruikersauthenticatie en -beheer.
 
-SQL Server: De applicatie slaat gegevens op in een SQL Server-database.
+SQL Server Azure: De applicatie slaat gegevens op in een SQL Server-database in Azure.
 
 Swagger/OpenAPI: Swagger is geïntegreerd om API-documentatie en testmogelijkheden te bieden.
 
-Docker: De applicatie is gecontaineriseerd met Docker, wat zorgt voor eenvoudige implementatie en schaalbaarheid.
+Azure DevOps: De applicatie draait door middel van een CI/CD straat in Azure DevOps die de applicatie pusht naar een Linux WebService in Azure.
 
-Azure: De applicatie wordt gehost op het Azure-cloudplatform.
+Azure: De applicatie wordt gehost op het Azure-cloudplatform op een Linux WebService.
