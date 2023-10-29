@@ -32,20 +32,3 @@ C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Period
 C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Infrastructure\obj\Debug\net6.0\Infrastructure.pdb
 C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Infrastructure\obj\Debug\net6.0\Infrastructure.genruntimeconfig.cache
 C:\Users\mickj\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Infrastructure\obj\Debug\net6.0\ref\Infrastructure.dll
-E:\School (OneDrive)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Infrastructure\bin\Debug\net6.0\Infrastructure.deps.json
-E:\School (OneDrive)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Infrastructure\bin\Debug\net6.0\Infrastructure.runtimeconfig.json
-E:\School (OneDrive)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Infrastructure\bin\Debug\net6.0\Infrastructure.dll
-E:\School (OneDrive)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Infrastructure\bin\Debug\net6.0\Infrastructure.pdb
-E:\School (OneDrive)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Infrastructure\bin\Debug\net6.0\Core.Domain.dll
-E:\School (OneDrive)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Infrastructure\bin\Debug\net6.0\Core.Domain.pdb
-E:\School (OneDrive)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.AssemblyReference.cache
-E:\School (OneDrive)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Infrastructure\obj\Debug\net6.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
-E:\School (OneDrive)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Infrastructure\obj\Debug\net6.0\Infrastructure.AssemblyInfoInputs.cache
-E:\School (OneDrive)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Infrastructure\obj\Debug\net6.0\Infrastructure.AssemblyInfo.cs
-E:\School (OneDrive)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.CoreCompileInputs.cache
-E:\School (OneDrive)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.CopyComplete
-E:\School (OneDrive)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Infrastructure\obj\Debug\net6.0\Infrastructure.dll
-E:\School (OneDrive)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Infrastructure\obj\Debug\net6.0\refint\Infrastructure.dll
-E:\School (OneDrive)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Infrastructure\obj\Debug\net6.0\Infrastructure.pdb
-E:\School (OneDrive)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Infrastructure\obj\Debug\net6.0\Infrastructure.genruntimeconfig.cache
-E:\School (OneDrive)\OneDrive - Avans Hogeschool\Desktop\Avans\Jaar2_Herkansing\Periode1\ServerSide-WebFrameworksIndividueel\Infrastructure\obj\Debug\net6.0\ref\Infrastructure.dll
